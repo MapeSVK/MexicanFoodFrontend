@@ -8,6 +8,7 @@ import { MealsListComponent } from './meals/meals-list/meals-list.component';
 import { MealsAddComponent } from './meals/meals-add/meals-add.component';
 import { MealsUpdateComponent } from './meals/meals-update/meals-update.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
