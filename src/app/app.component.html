@@ -1,1 +1,15 @@
-<router-outlet></router-outlet>
+<div fxFlexFill fxLayout="column">
+  <app-navbar></app-navbar>
+
+  <div fxLayout="column" fxFlex>
+    <div style="margin: 69px 1% 50px; height: 100%;">
+      <router-outlet></router-outlet>
+    </div>
+    <footer fxLayout="column" style="height: 40px">
+      <div fxLayout="row">
+        <hr fxFlex="100">
+      </div>
+      <p fxFlexAlign="center">Copyright © 2018</p>
+    </footer>
+  </div>
+</div>

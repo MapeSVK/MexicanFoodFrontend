@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+html, body {
+  min-height: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+/* theme colors */
+.mat-toolbar.mat-primary {
+  background: #b55d3f;
+  color: #fff;
+}
+
+
