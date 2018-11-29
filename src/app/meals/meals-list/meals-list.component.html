@@ -1,3 +1,61 @@
-<p>
-  meals-list works!
-</p>
+<div class="container"
+     fxLayout="column"
+     fxFill
+     fxLayoutGap="10px">
+  <div fxLayout="row">
+    <!--<button mat-mini-fab color="primary" routerLink="/customer-add">
+      <i class="fas fa-plus"></i>
+    </button>-->
+  </div>
+  <div fxLayout="row"
+       fxLayoutAlign="center end">
+
+    <!--<mat-paginator [length]="count"
+                   [pageSize]="pageEvent.pageSize"
+                   [pageSizeOptions]="[6, 12, 24, 120]"
+                   (page)="changePage($event)">
+    </mat-paginator>-->
+
+  </div>
+  <h4 *ngIf="loading"
+      fxFill
+      fxLayoutAlign="center center">
+    <mat-spinner></mat-spinner>
+  </h4>
+  <div fxLayout="row wrap"
+       fxLayoutAlign="start start"
+       *ngIf="customers && !loading">
+    <div fxFlex="33"
+         [fxFlex.md]="'50'"
+         [fxFlex.sm]="'100'"
+         [fxFlex.xs]="'100'"
+         *ngFor="let customer of customers">
+      <mat-card>
+        <mat-card-content>
+          <div>{{customer.firstName}} {{customer.lastName}}</div>
+          <p>Address: {{customer.address}}</p>
+          <p>Id: {{customer.id}}</p>
+          <p>Type: {{customer.type?.name}}</p>
+        </mat-card-content>
+        <mat-card-actions fxLayout="row" fxLayoutGap="5px">
+          <span fxFlex></span>
+          <button routerLink="/customers/{{customer.id}}"
+                  mat-mini-fab
+                  color="accent">
+            <i class="fas fa-info"></i>
+          </button>
+          <button routerLink="/customer-update/{{customer.id}}"
+                  mat-mini-fab
+                  color="primary">
+            <i class="fas fa-pencil-alt"></i>
+          </button>
+          <button (click)="delete(customer.id)"
+                  mat-mini-fab
+                  color="accent">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
