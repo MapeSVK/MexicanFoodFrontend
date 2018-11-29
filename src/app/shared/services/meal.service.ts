@@ -21,13 +21,14 @@ export class MealService {
   createMeal(newMeal: Meal): Observable<Meal> {
     return this.http.post<Meal>(this.apiUrl, newMeal);
   }
-  getMealById(id: number): Observable<Meal> {
+  getMealById(id: number): Observable<any> {
     return this.http.get(this.apiUrl + '/' + id);
   }
-  updateMeal(id: number, meal: Meal): Observable<Meal> {
+  updateMeal(id: number, meal: Meal): Observable<any> {
     return this.http.put(this.apiUrl + '/' + id, meal);
   }
-  deleteMeal(id: number): Observable<Meal> {
+  deleteMeal(id: number): Observable<any> {
     return this.http.delete(this.apiUrl + '/' + id);
-  }
+  } 
+
 }
