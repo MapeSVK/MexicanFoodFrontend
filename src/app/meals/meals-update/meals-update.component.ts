@@ -24,13 +24,13 @@ export class MealsUpdateComponent implements OnInit {
     this.id = +this.route.snapshot.paramMap.get('id');
     this.mealService.getMealById(this.id).subscribe( meal => {
       this.loading = false;
-      this.mealForm({
+   /*   this.mealForm({
         name: meal.name,
         ingredients: meal.ingredients,
         description: meal.description,
         picture: meal.picture,
         price: meal.price
-      });
+      });*/
     });
   }
   save() {

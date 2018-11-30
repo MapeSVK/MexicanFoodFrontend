@@ -1,3 +1,9 @@
-<p>
-  meals-add works!
-</p>
+<form [formGroup]="mealForm" (ngSubmit)="save()">
+  <input type="text" formControlName="name">
+  <input type="text" formControlName="ingredients">
+  <input type="text" formControlName="description">
+  <input type="text" formControlName="picture">
+  <input type="number" formControlName="price">
+
+  <button type="submit" >ADDDD</button>
+</form>
