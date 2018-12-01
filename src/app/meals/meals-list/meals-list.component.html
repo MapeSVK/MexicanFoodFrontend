@@ -17,14 +17,14 @@
      </mat-paginator>&ndash;&gt;
  &ndash;&gt;-->
 
-  <h4 *ngIf="loading"
+  <h4 *ngIf="!loading"
       fxFill
       fxLayoutAlign="center center">
     <mat-spinner></mat-spinner>
   </h4>
   <div fxLayout="row wrap"
        fxLayoutAlign="start start"
-       *ngIf="meals && !loading">
+       *ngIf="meals && loading">
     <div fxFlex="33"
          [fxFlex.md]="'50'"
          [fxFlex.sm]="'100'"

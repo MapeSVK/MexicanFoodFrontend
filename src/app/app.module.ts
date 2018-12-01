@@ -16,6 +16,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import {MatListModule} from '@angular/material/list';
+
 
 
 
@@ -39,7 +42,9 @@ import {MatCardModule} from '@angular/material/card';
     MatToolbarModule,
     MatSidenavModule,
     MatProgressSpinnerModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -22,7 +22,7 @@
 
     <div fxShow="true" fxHide.gt-xs="true" class="big-navigation-container">
 
-      <a href="#" (click)="sidenav.toggle()"><i class="material-icons" id="small-navigation-icon">menu</i></a>
+      <button (click)="sidenav.toggle()"><i class="fas fa-bars" id="small-navigation-icon"></i></button>
 
     </div>
 
@@ -46,8 +46,9 @@
 
     </mat-sidenav>
 
+    <!-- CONTENT FROM ROOTS (MEALS,...) -->
+    <mat-sidenav-content fxFlexFill><router-outlet></router-outlet></mat-sidenav-content>
 
-   <!-- <mat-sidenav-content fxFlexFill>Main content</mat-sidenav-content>-->
 
   </mat-sidenav-container>
 
