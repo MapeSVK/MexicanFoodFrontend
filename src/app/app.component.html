@@ -1,15 +1,24 @@
-<div fxFlexFill fxLayout="column">
-  <app-navbar></app-navbar>
+<!-- STRUCTURE:
+1. app component (this component) is wrapped in <body> tag in index.html
+2. here I specify the main container <div> element
+3. this main container then contains 2 parts -> navbar + content from routes (can be found in navbar) and footer part
+-->
 
-  <div fxLayout="column" fxFlex>
-    <div style="margin: 69px 1% 50px; height: 100%;">
-      <router-outlet></router-outlet>
-    </div>
-    <footer fxLayout="column" style="height: 40px">
-      <div fxLayout="row">
-        <hr fxFlex="100">
-      </div>
-      <p fxFlexAlign="center">Copyright © 2018</p>
-    </footer>
-  </div>
+
+<div id="main-container">
+
+  <section id="navbar-content-section">
+    <app-navbar></app-navbar>
+  </section>
+
+  <footer>
+    <p>Copyright © 2018 Business Academy South West</p>
+  </footer>
+
 </div>
+
+
+
+
+
+

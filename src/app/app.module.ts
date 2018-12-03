@@ -18,6 +18,7 @@ import {FooterComponent } from './shared/footer/footer.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import {MatListModule} from '@angular/material/list';
 
 
 
@@ -43,7 +44,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatSidenavModule,
     MatProgressSpinnerModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
