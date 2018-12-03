@@ -55,6 +55,7 @@ import {MealService} from './shared/services/meal.service';
     MatInputModule,
     MatSelectModule
   ],
+  
   providers: [
     AuthGuard,
     AuthenticationService,
