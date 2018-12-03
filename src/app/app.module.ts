@@ -1,26 +1,28 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { WelcomeComponent } from './welcome/welcome.component';
-import { MealsListComponent } from './meals/meals-list/meals-list.component';
-import { MealsAddComponent } from './meals/meals-add/meals-add.component';
-import { MealsUpdateComponent } from './meals/meals-update/meals-update.component';
-import { NavbarComponent } from './shared/navbar/navbar.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {WelcomeComponent} from './welcome/welcome.component';
+import {MealsListComponent} from './meals/meals-list/meals-list.component';
+import {MealsAddComponent} from './meals/meals-add/meals-add.component';
+import {MealsUpdateComponent} from './meals/meals-update/meals-update.component';
+import {NavbarComponent} from './shared/navbar/navbar.component';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
-import {FooterComponent } from './shared/footer/footer.component';
+import {FooterComponent} from './shared/footer/footer.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatListModule} from '@angular/material/list';
-
-
+import { LoginComponent } from './login/login.component';
+import {MatFormField, MatFormFieldModule, MatInput, MatInputModule, MatSelectModule} from '@angular/material';
+import {AuthenticationService} from './shared/services/authentication.service';
+import {AuthGuard} from './guard/auth.guard';
+import {MealService} from './shared/services/meal.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import {MatListModule} from '@angular/material/list';
     MealsAddComponent,
     MealsUpdateComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -41,13 +44,23 @@ import {MatListModule} from '@angular/material/list';
     FlexLayoutModule,
     BrowserAnimationsModule,
     MatToolbarModule,
+    MatSelectModule,
+    MatInputModule,
     MatSidenavModule,
     MatProgressSpinnerModule,
     MatCardModule,
     MatButtonModule,
-    MatListModule
+    MatListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    AuthenticationService,
+    MealService
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
