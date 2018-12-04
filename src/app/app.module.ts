@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {Input, NgModule} from '@angular/core';
+import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {WelcomeComponent} from './welcome/welcome.component';
@@ -18,7 +18,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatListModule} from '@angular/material/list';
-import {LoginComponent} from './login/login.component';
+import { LoginComponent } from './login/login.component';
 import {MatFormField, MatFormFieldModule, MatInput, MatInputModule, MatSelectModule} from '@angular/material';
 import {AuthenticationService} from './shared/services/authentication.service';
 import {AuthGuard} from './guard/auth.guard';
@@ -55,7 +55,7 @@ import {MealService} from './shared/services/meal.service';
     MatInputModule,
     MatSelectModule
   ],
-
+  
   providers: [
     AuthGuard,
     AuthenticationService,

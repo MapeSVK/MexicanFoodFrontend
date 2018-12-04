@@ -2,9 +2,7 @@
      fxFill
      fxLayoutGap="10px">
   <div fxLayout="row">
-    <button mat-mini-fab color="primary" routerLink="/meals">
-      <i class="fas fa-angle-left"></i>
-    </button>
+    <button mat-mini-fab color="primary" routerLink="/candles"><</button>
   </div>
   <div fxLayout="row" fxLayoutAlign="center top">
     <mat-card fxFlex="33">
@@ -15,16 +13,15 @@
           </mat-form-field>
 
           <mat-form-field>
-            <textarea rows="6" matInput placeholder="Ingredients" formControlName="ingredients"></textarea>
+            <input matInput placeholder="Ingredients" formControlName="ingredients">
           </mat-form-field>
 
           <mat-form-field>
-            <textarea rows="6" id="textarea1" matInput placeholder="Description"
-                      formControlName="description"></textarea>
+            <input matInput placeholder="Description" formControlName="description">
           </mat-form-field>
 
           <mat-form-field>
-            <input matInput placeholder="Picture URL" formControlName="picture">
+            <input matInput placeholder="Picture" formControlName="picture">
           </mat-form-field>
 
           <mat-form-field>
