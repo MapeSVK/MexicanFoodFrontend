@@ -14,6 +14,8 @@ html,
 body {
   height: 100%;
   position: relative;
+  margin: 0;
+  font-family: SansSerif, sans-serif !important;
 }
 
 
@@ -23,4 +25,14 @@ body {
   color: #fff;
 }
 
+.mat-expansion-indicator::after {
+  color: #e8e8e8;
+}
 
+.mat-expansion-panel-body {
+  padding: 0px 10px 9px 10px !important;
+}
+
+.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: #860f0f;
+}

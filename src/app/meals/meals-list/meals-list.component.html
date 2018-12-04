@@ -2,8 +2,8 @@
      fxLayout="column"
      fxFill
      fxLayoutGap="10px">
-  <div fxLayout="row">
-    <button mat-mini-fab color="primary" routerLink="/meals-add">
+  <div fxLayout="row" id="add-meal-container">
+    <button mat-mini-fab color="primary" routerLink="/meals-add" id="add-meal-button">
       <i class="fas fa-plus"></i>
     </button>
   </div>
@@ -25,29 +25,44 @@
   <div fxLayout="row wrap"
        fxLayoutAlign="start start"
        *ngIf="meals && loading">
-    <div fxFlex="33"
-         [fxFlex.md]="'50'"
-         [fxFlex.sm]="'100'"
-         [fxFlex.xs]="'100'"
-         *ngFor="let meal of meals">
+    <div *ngFor="let meal of meals" id="card-container">
       <mat-card>
         <mat-card-content>
-          <div>{{meal.name}}</div>
-          <div>{{meal.picture}}</div>
-          <div>{{meal.description}}</div>
-          <div>{{meal.ingredients}}</div>
+          <div class="meal-title">{{meal.name}}</div>
+          <div class="meal-picture-container"><img src="{{meal.picture}}" alt="" class="meal-picture"></div>
 
+          <mat-expansion-panel>
+            <mat-expansion-panel-header id="expansion-panel-header">
+              <mat-panel-title id="expansion-panel-title">
+                How it tastes? What is inside?
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <!-- Content after expansion -->
+            <div class="expansion-content">
+              <div class="meal-desciption">{{meal.description}}</div>
+              <div class="meal-ingredients">{{meal.ingredients}}</div>
+            </div>
+          </mat-expansion-panel>
+
+          <div class="price-order-container">
+            <div class="meal-price">{{meal.price}} DKK</div>
+            <button routerLink="" class="meal-order-button">ADD TO ORDER</button>
+          </div>
         </mat-card-content>
-        <mat-card-actions fxLayout="row" fxLayoutGap="5px">
-          <span fxFlex></span>
+
+        <!-- Buttons for deletion / update -->
+        <mat-card-actions fxLayout="row" fxLayoutGap="5px" id="meal-admin-buttons-container">
           <button routerLink="/meals-update/{{meal.id}}"
                   mat-mini-fab
-                  color="primary">
+                  color="primary"
+                  id="button-update">
             <i class="fas fa-pencil-alt"></i>
           </button>
+          <span fxFlex></span>
           <button (click)="delete(meal.id)"
                   mat-mini-fab
-                  color="accent">
+                  color="accent"
+                  id="button-delete">
             <i class="fas fa-trash-alt"></i>
           </button>
         </mat-card-actions>

@@ -1,0 +1,153 @@
+.mat-card:not([class*=mat-elevation-z]),.mat-card {
+  box-shadow: none;
+  border-radius: 0px;
+  padding: 0px;
+}
+
+.mat-card {
+  background-color: #e8e8e8;
+}
+
+.mat-expansion-panel-header {
+  padding: 0 16px;
+  font-family: SansSerif, sans-serif;
+  font-size: 18px;
+}
+
+.mat-expansion-panel:not([class*=mat-elevation-z])
+{
+  box-shadow: none;
+}
+
+.mat-expansion-panel {
+  border-radius: 0px;
+  background: #860f0f;
+}
+
+.mat-expansion-indicator::after {
+  color: #e8e8e8;
+}
+
+
+.container {
+  background-color: #fff;
+}
+
+#expansion-panel-header {
+  background-color: #fff;
+}
+
+#expansion-panel-title {
+  color: #e8e8e8;
+}
+
+.expansion-content div {
+  padding: 15px;
+  background-color: #fff;
+}
+
+.meal-title {
+  font-family: SansSerif, sans-serif;
+  font-size: 20px;
+  padding: 14px 10px;
+  background-color: #e8e8e8;
+  color: #424242;
+}
+
+.meal-price {
+  font-size: 17px;
+  padding: 3px 15px;
+  margin-top: 20px;
+  background-color: #e8e8e8;
+  color: #424242;
+  float: left;
+}
+
+.meal-picture {
+  max-width: 100%;
+  height: auto;
+}
+
+#meal-admin-buttons-container {
+  background-color: #e8e8e8;
+}
+
+#add-meal-button {
+  margin-left: 20px;
+  margin-top: 7px;
+  background-color: #860f0f;
+}
+
+#add-meal-container {
+  margin-bottom: 0px !important;
+}
+
+.mat-card-actions {
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+#button-delete {
+  background-color: #860f0f;
+  margin-right: 7px;
+  margin-bottom: 10px;
+}
+
+#button-update {
+  background-color: #860f0f;
+  margin-left: 7px;
+  margin-bottom: 10px;
+}
+
+.meal-order-button {
+  margin: 16px 14px 20px 0px;
+  background-color: #860f0f;
+  border: 1px solid #860f0f;
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 10px;
+  float: right;
+}
+
+
+
+.mat-expansion-panel:not(.mat-expanded):not([aria-disabled=true]) .mat-expansion-panel-header:hover {
+    background: #860f0f;
+}
+
+.expansion-content[_ngcontent-c6] div[_ngcontent-c6] {
+  background-color: #860f0f;
+  color: #e8e8e8;
+}
+
+@media only screen and (max-width: 600px) {
+  #card-container {
+    max-width: 100%;
+    min-width: 100%;
+    margin: 20px 0;
+  }
+}
+
+
+@media only screen and (min-width: 600px) {
+  #card-container {
+    max-width: 46%;
+    min-width: 46%;
+    margin: 13px 2%;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  #card-container {
+    max-width: 46%;
+    min-width: 46%;
+    margin: 13px 2%;
+  }
+}
+
+
+
+
+
