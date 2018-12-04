@@ -6,3 +6,4 @@ export class Meal {
   picture: string;
   price: number;
 }
+1
