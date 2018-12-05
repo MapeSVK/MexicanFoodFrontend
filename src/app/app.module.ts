@@ -18,6 +18,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatListModule} from '@angular/material/list';
+import {MatExpansionModule} from '@angular/material/expansion';
 import { LoginComponent } from './login/login.component';
 import {MatFormField, MatFormFieldModule, MatInput, MatInputModule, MatSelectModule} from '@angular/material';
 import {AuthenticationService} from './shared/services/authentication.service';
@@ -51,6 +52,7 @@ import {MealService} from './shared/services/meal.service';
     MatCardModule,
     MatButtonModule,
     MatListModule,
+    MatExpansionModule,
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule
