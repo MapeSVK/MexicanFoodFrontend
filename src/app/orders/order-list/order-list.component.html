@@ -21,19 +21,12 @@
               </mat-panel-title>
             </mat-expansion-panel-header>
             <!-- Content after expansion -->
-            <div *ngIf="order.orderLines && order.orderLines.length >= 2">
               <div *ngFor="let ol of order.orderLines.slice(0,2)">
                 <h3> Item: {{ol.meal.name}} -
-                  price: {{ol.priceWhenBought | currency}} * quantity: {{ol.quantity}} </h3>
-                <h3> total: {{(ol.priceWhenBought * ol.quantity) | currency}} </h3>
+                  price: {{ol.meal.price}} * quantity: {{ol.quantity}} </h3>
+                <h3> total: {{(ol.meal.price * ol.quantity) | currency}} </h3>
                 <hr>
               </div>
-            </div>
-            <div *ngIf="order.orderLines && order.orderLines.length < 2">
-              <h3>No items Found..</h3>
-              <h3>..</h3>
-              <h3>..</h3>
-            </div>
             <!--End of expansion -->
           </mat-expansion-panel>
           <div class="price-order-container">
@@ -54,3 +47,4 @@
     </div>
   </div>
 </div>
+

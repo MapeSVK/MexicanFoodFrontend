@@ -19,7 +19,6 @@ export class OrderListComponent implements OnInit {
 
   ngOnInit() {
     this.refreshOrders();
-    this.refreshMeals();
   }
 
   refreshOrders() {
@@ -27,11 +26,6 @@ export class OrderListComponent implements OnInit {
     this.orderService.getAllOrders().subscribe( listOfOrders => {
       this.orders = listOfOrders;
       this.loading = true;
-    });
-  }
-  refreshMeals() {
-    this.mealService.getMealById(1).subscribe(meals => {
-      this.meals = meals;
     });
   }
 }
