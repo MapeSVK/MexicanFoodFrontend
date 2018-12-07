@@ -24,6 +24,7 @@ import {MatFormField, MatFormFieldModule, MatInput, MatInputModule, MatSelectMod
 import {AuthenticationService} from './shared/services/authentication.service';
 import {AuthGuard} from './guard/auth.guard';
 import {MealService} from './shared/services/meal.service';
+import { OrderListComponent } from './orders/order-list/order-list.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {MealService} from './shared/services/meal.service';
     MealsUpdateComponent,
     NavbarComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    OrderListComponent
   ],
   imports: [
     BrowserModule,

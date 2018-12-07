@@ -1,0 +1,56 @@
+<div class="container"
+     fxLayout="column"
+     fxFill
+     fxLayoutGap="10px">
+  <h4 *ngIf="!loading"
+      fxFill
+      fxLayoutAlign="center center">
+    <mat-spinner></mat-spinner>
+  </h4>
+  <div fxLayout="row wrap"
+       fxLayoutAlign="start start"
+       *ngIf="orders && loading">
+    <div *ngFor="let order of orders" id="card-container">
+      <mat-card>
+        <mat-card-content>
+          <div class="order-title">Order: {{order.id}}</div>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header id="expansion-panel-header">
+              <mat-panel-title id="expansion-panel-title">
+                Meals in this order
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <!-- Content after expansion -->
+            <div *ngIf="order.orderLines && order.orderLines.length >= 2">
+              <div *ngFor="let ol of order.orderLines.slice(0,2)">
+                <h3> Item: {{ol.meal.name}} -
+                  price: {{ol.priceWhenBought | currency}} * quantity: {{ol.quantity}} </h3>
+                <h3> total: {{(ol.priceWhenBought * ol.quantity) | currency}} </h3>
+                <hr>
+              </div>
+            </div>
+            <div *ngIf="order.orderLines && order.orderLines.length < 2">
+              <h3>No items Found..</h3>
+              <h3>..</h3>
+              <h3>..</h3>
+            </div>
+            <!--End of expansion -->
+          </mat-expansion-panel>
+          <div class="price-order-container">
+            <div class="order-price">{{order.id}} DKK</div>
+          </div>
+        </mat-card-content>
+        <!-- Buttons for deletion / update -->
+        <mat-card-actions fxLayout="row" fxLayoutGap="5px" id="order-admin-buttons-container">
+          <span fxFlex></span>
+          <button (click)="delete(order.id)"
+                  mat-mini-fab
+                  color="accent"
+                  id="button-delete">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
