@@ -41,7 +41,7 @@ export class AuthenticationService {
     });
   }
   public clearToken() {
-    localStorage.removeItem('token');
+    localStorage.removeItem('currentUser');
     this.isLoggedIn.next(undefined);
   }
   public logout(): Observable<boolean> {

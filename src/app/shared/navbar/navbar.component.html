@@ -18,6 +18,8 @@
 
       <a href="#" mat-button class="screen-navigation-controls">CONTACT</a>
 
+      <a *ngIf="loggedIn" (click)="logOut()" mat-button class="screen-navigation-controls">LOGOUT</a>
+
     </div>
 
     <div fxShow="true" fxHide.gt-xs="true" class="big-navigation-container">
