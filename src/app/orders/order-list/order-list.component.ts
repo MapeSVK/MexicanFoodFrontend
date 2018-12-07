@@ -30,7 +30,6 @@ export class OrderListComponent implements OnInit {
     });
   }
   refreshMeals() {
-    debugger;
     this.mealService.getAllMeals().subscribe(meals => {
       this.meals = meals;
     });

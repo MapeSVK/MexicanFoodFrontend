@@ -52,6 +52,13 @@
   color: #424242;
 }
 
+.order-date{
+  font-family: SansSerif, sans-serif;
+  padding: 0px 10px;
+  background-color: #e8e8e8;
+  color: #424242;
+}
+
 .order-price {
   font-size: 17px;
   padding: 3px 15px;
