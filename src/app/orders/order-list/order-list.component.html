@@ -14,6 +14,8 @@
       <mat-card>
         <mat-card-content>
           <div class="order-title">Order: {{order.id}}</div>
+          <p class="order-date">Ordered: {{order.orderDate}}</p>
+          <p class="order-date">Time of pick up: {{order.pickUpDate}}</p>
           <mat-expansion-panel>
             <mat-expansion-panel-header id="expansion-panel-header">
               <mat-panel-title id="expansion-panel-title">
@@ -21,17 +23,33 @@
               </mat-panel-title>
             </mat-expansion-panel-header>
             <!-- Content after expansion -->
+            <div class="expansion-content" *ngIf="order.orderLines && order.orderLines.length >= 1">
               <div *ngFor="let ol of order.orderLines.slice(0,2)">
-                <h3> Item: {{ol.meal.name}} -
-                  price: {{ol.meal.price}} * quantity: {{ol.quantity}} </h3>
-                <h3> total: {{(ol.meal.price * ol.quantity) | currency}} </h3>
+                <p>
+                  Item: {{ol.meal.name}}
+                </p>
+                <p>
+                  Price: {{ol.meal.price}} DKK
+                </p>
+                <p>
+                  Quantity: {{ol.quantity}}
+                </p>
+                <p>
+                  Total: {{(ol.meal.price * ol.quantity)}} DKK
+                </p>
                 <hr>
               </div>
+            </div>
+            <div class="expansion-content" *ngIf="order.orderLines && order.orderLines.length < 1">
+              <p>No items Found.</p>
+            </div>
             <!--End of expansion -->
           </mat-expansion-panel>
+          <!--
           <div class="price-order-container">
             <div class="order-price">{{order.id}} DKK</div>
           </div>
+          -->
         </mat-card-content>
         <!-- Buttons for deletion / update -->
         <mat-card-actions fxLayout="row" fxLayoutGap="5px" id="order-admin-buttons-container">

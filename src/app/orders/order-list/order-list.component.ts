@@ -28,4 +28,9 @@ export class OrderListComponent implements OnInit {
       this.loading = true;
     });
   }
+  refreshMeals() {
+    this.mealService.getAllMeals().subscribe(meals => {
+      this.meals = meals;
+    });
+  }
 }
