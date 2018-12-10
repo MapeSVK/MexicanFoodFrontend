@@ -25,6 +25,7 @@ import {AuthenticationService} from './shared/services/authentication.service';
 import {AuthGuard} from './guard/auth.guard';
 import {MealService} from './shared/services/meal.service';
 import { OrderListComponent } from './orders/order-list/order-list.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { OrderListComponent } from './orders/order-list/order-list.component';
     NavbarComponent,
     FooterComponent,
     LoginComponent,
-    OrderListComponent
+    OrderListComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,

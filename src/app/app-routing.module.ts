@@ -6,6 +6,7 @@ import {MealsAddComponent} from './meals/meals-add/meals-add.component';
 import {MealsUpdateComponent} from './meals/meals-update/meals-update.component';
 import {LoginComponent} from './login/login.component';
 import {OrderListComponent} from './orders/order-list/order-list.component';
+import {AboutUsComponent} from './about-us/about-us.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'meals-add', component: MealsAddComponent},
   {path: 'meals-update/:id', component: MealsUpdateComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'orders', component: OrderListComponent}
+  {path: 'orders', component: OrderListComponent},
+  {path: 'about-us', component: AboutUsComponent}
 ];
 
 @NgModule({

@@ -28,7 +28,6 @@
   color: #e8e8e8;
 }
 
-
 .container {
   background-color: #fff;
 }
@@ -111,8 +110,6 @@
   float: right;
 }
 
-
-
 .mat-expansion-panel:not(.mat-expanded):not([aria-disabled=true]) .mat-expansion-panel-header:hover {
     background: #860f0f;
 }
@@ -129,7 +126,6 @@
     margin: 20px 0;
   }
 }
-
 
 @media only screen and (min-width: 600px) {
   #card-container {
