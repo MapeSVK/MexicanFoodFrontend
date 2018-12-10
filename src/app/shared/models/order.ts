@@ -8,4 +8,5 @@ export class Order {
   orderDate?: Date;
   comment: string;
   orderLines?: OrderLine[];
+
 }

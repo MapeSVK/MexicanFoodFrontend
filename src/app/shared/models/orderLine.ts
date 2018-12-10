@@ -1,3 +1,4 @@
+
 import {Meal} from './meal';
 
 export class OrderLine {
@@ -6,4 +7,5 @@ export class OrderLine {
   orderId: number;
   quantity: number;
   priceWhenBought: number;
+
 }
