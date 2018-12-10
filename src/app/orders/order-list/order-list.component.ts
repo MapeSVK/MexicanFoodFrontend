@@ -19,7 +19,6 @@ export class OrderListComponent implements OnInit {
 
   ngOnInit() {
     this.refreshOrders();
-    this.refreshMeals();
   }
 
   refreshOrders() {

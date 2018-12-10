@@ -1,29 +1,31 @@
-<div class="col-md-6 col-md-offset-3">
-  <div class="alert alert-info">
-    Username: ???, Password: ???<br />
+<div class="col-md-6 col-md-offset-3" fxLayout="column"
+     fxFill
+     fxLayoutGap="10px">
 
-  </div>
-  <h2>Login</h2>
+    <div fxLayoutAlign="center top">
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <input matInput placeholder="Username" type="text" formControlName="username" class="form-control" required/>
-      <div *ngIf="username.invalid && submitted" class="alert-danger">
+      <mat-form-field>
+        <input matInput placeholder="Username" type="text" formControlName="username" class="form-control" required/>
+      </mat-form-field>
+       <div *ngIf="username.invalid && submitted" class="alert-danger">
         <div *ngIf="username.errors.required">Username is required</div>
       </div>
     </div>
 
-    <div class="form-group">
-      <input matInput placeholder="Password" type="password" formControlName="password" class="form-control" required/>
-      <div *ngIf="password.invalid && submitted" class="alert-danger">
+      <mat-form-field>
+        <input matInput placeholder="Password" type="password" formControlName="password" class="form-control" required/>
+      </mat-form-field>
+        <div *ngIf="password.invalid && submitted" class="alert-danger">
         <div *ngIf="password.errors.required">Password is required</div>
       </div>
-    </div>
 
-    <div class="form-group">
-      <button class="btn btn-primary">Login</button>
+    <div class="loginBtn" fxLayoutAlign="end center">
+      <button mat-raised-button style="background-color: #860f0f; color: white;" class="btn btn-primary" >Login</button>
       <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
     </div>
     <div *ngIf="errormessage" class="alert-danger">{{errormessage}}</div>
   </form>
+    </div>
 </div>
 

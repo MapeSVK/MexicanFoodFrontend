@@ -1,0 +1,48 @@
+.footer-info {
+  background: #e8e8e8;
+  grid-row: 4 / 4;
+  grid-column: span 10;
+  font-size: 15px;
+  grid-template-rows: 100px 80px 50px;
+  grid-template-columns: repeat(10, 1fr);
+  display: grid;
+  color: #860f0f;
+}
+.mail {
+  text-align: center;
+  grid-column: 2 / 4;
+}
+
+.mail a {
+  text-decoration: none;
+  color: #860f0f;
+}
+
+.mail a:hover {
+  color: #666666;
+}
+
+.address {
+  grid-column: 5 / 7;
+  text-align: center;
+}
+
+.opening-hours {
+  text-align: center;
+  grid-column: 8 / 10;
+}
+
+@media only screen and (max-width: 600px) {
+  #logo {
+    width: 86%;
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+
+}
+
+@media only screen and (min-width: 960px) {
+
+}
