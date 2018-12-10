@@ -31,6 +31,5 @@ logOut() {
   this.loggedIn = false;
   this.router.navigateByUrl('/login');
 });
-
 }
 }
