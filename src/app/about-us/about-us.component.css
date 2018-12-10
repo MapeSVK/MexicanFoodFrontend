@@ -1,0 +1,18 @@
+.mat-expansion-panel-header {
+  padding: 0 16px;
+  color: white;
+  font-family: SansSerif, sans-serif;
+  font-size: 18px;
+}
+
+.title-container{
+  margin: 16px 0;
+  width: 100%;
+  height: auto;
+  background-color: #860f0f;
+}
+
+.img-container{
+  height: auto;
+  margin: 16px 0;
+}
