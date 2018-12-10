@@ -46,7 +46,7 @@
 
           <div class="price-order-container">
             <div class="meal-price">{{meal.price}} DKK</div>
-            <button routerLink="" class="meal-order-button">ADD TO ORDER</button>
+            <button (click)="addToSessionStorage(meal)" class="meal-order-button">ADD TO CART</button>
           </div>
         </mat-card-content>
 

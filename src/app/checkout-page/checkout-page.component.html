@@ -1,0 +1,30 @@
+<div class="cartMeals-main-container"></div>
+
+<div *ngFor="let cartMeals of mealsInCart" class="cartMeal-object-container">
+  <div class="cartMealsSection">
+    <div class="cartMeal-picture-container"><img src="{{cartMeals.picture}}" alt=""></div>
+    <div class="cartMeal-title">{{cartMeals.name}}</div>
+    <div class="cartMeal-title">{{cartMeals.price}}</div>
+  </div>
+
+  <div class="cartMealsActionsSection">
+    <div class="carMeal-action-delete-container"></div>
+
+    <div class="carMeal-action-quantity-container"></div>
+  </div>
+</div>
+
+<div class="global-actions">
+  <div class="clear-all-meals-button-container"><button>CLEAR</button></div>
+  <div class="payment-button-button-container">
+    <button mat-raised-button (click)="openDetails()">Continue to payment</button>
+  </div>
+</div>
+
+<mat-expansion-panel [expanded]="detailsOpenState">
+
+
+  <button>PAYMENT</button>
+
+</mat-expansion-panel>
+
