@@ -2,21 +2,19 @@
 
   <mat-toolbar color="primary">
 
-    <span>LA BAMBA</span>
-
-    <span class="example-spacer"></span>
+    <div class="logo-container"><a routerLink=""><img src="../../../assets/logoCrop.png" alt="" id="logo"></a></div>
 
     <div fxShow="true" fxHide.lt-sm="true" class="big-navigation-container">
 
-      <!-- The following menu items will be hidden on both SM and XS screen sizes -->
-
-      <a routerLink="" mat-button class="screen-navigation-controls">HOME</a>
+      <!-- The following menu items will be hidden on small size screens -->
 
       <a routerLink="/meals" mat-button class="screen-navigation-controls">MEALS</a>
 
-      <a href="" mat-button class="screen-navigation-controls">ORDER</a>
+      <a routerLink="/orders" mat-button class="screen-navigation-controls">ORDERS</a>
 
-      <a href="#" mat-button class="screen-navigation-controls">CONTACT</a>
+      <a routerLink="/about-us" mat-button class="screen-navigation-controls">ABOUT US</a>
+
+      <a routerLink="#" mat-button class="screen-navigation-controls">CONTACT</a>
 
       <a *ngIf="loggedIn" (click)="logOut()" mat-button class="screen-navigation-controls">LOGOUT</a>
 
@@ -32,17 +30,17 @@
 
   <mat-sidenav-container fxFlexFill class="example-container">
 
-    <mat-sidenav #sidenav fxLayout="column" style="width: 28%;">
+    <mat-sidenav #sidenav fxLayout="column" style="width: 36%;">
 
       <div fxLayout="column" style="margin-top: 20px;">
 
-        <a routerLink="" mat-button class="mobile-navigation-controls">HOME</a>
-
         <a routerLink="/meals" mat-button class="mobile-navigation-controls">MEALS</a>
 
-        <a href="#" mat-button class="mobile-navigation-controls">ORDER</a>
+        <a routerLink="/orders" mat-button class="mobile-navigation-controls">ORDERS</a>
 
-        <a href="#" mat-button class="mobile-navigation-controls">CONTACT</a>
+        <a routerLink="/about-us" mat-button class="mobile-navigation-controls">ABOUT US</a>
+
+        <a routerLink="" mat-button class="mobile-navigation-controls">CONTACT</a>
 
       </div>
 
@@ -58,6 +56,8 @@
   </mat-sidenav-container>
 
 </div>
+
+
 
 
 

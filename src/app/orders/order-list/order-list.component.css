@@ -1,4 +1,4 @@
-.mat-card:not([class*=mat-elevation-z]),.mat-card {
+.mat-card:not([class*=mat-elevation-z]), .mat-card {
   box-shadow: none;
   border-radius: 0px;
   padding: 0px;
@@ -14,8 +14,7 @@
   font-size: 18px;
 }
 
-.mat-expansion-panel:not([class*=mat-elevation-z])
-{
+.mat-expansion-panel:not([class*=mat-elevation-z]) {
   box-shadow: none;
 }
 
@@ -27,7 +26,6 @@
 .mat-expansion-indicator::after {
   color: #e8e8e8;
 }
-
 
 .container {
   background-color: #fff;
@@ -43,10 +41,10 @@
 
 .expansion-content div {
   padding: 15px;
-
+  background-color: #fff;
 }
 
-.meal-title {
+.order-title {
   font-family: SansSerif, sans-serif;
   font-size: 20px;
   padding: 14px 10px;
@@ -54,7 +52,14 @@
   color: #424242;
 }
 
-.meal-price {
+.order-date{
+  font-family: SansSerif, sans-serif;
+  padding: 0px 10px;
+  background-color: #e8e8e8;
+  color: #424242;
+}
+
+.order-price {
   font-size: 17px;
   padding: 3px 15px;
   margin-top: 20px;
@@ -63,23 +68,8 @@
   float: left;
 }
 
-.meal-picture {
-  max-width: 100%;
-  height: auto;
-}
-
-#meal-admin-buttons-container {
+#order-admin-buttons-container {
   background-color: #e8e8e8;
-}
-
-#add-meal-button {
-  margin-left: 20px;
-  margin-top: 7px;
-  background-color: #860f0f;
-}
-
-#add-meal-container {
-  margin-bottom: 0px !important;
 }
 
 .mat-card-actions {
@@ -111,8 +101,6 @@
   float: right;
 }
 
-
-
 .mat-expansion-panel:not(.mat-expanded):not([aria-disabled=true]) .mat-expansion-panel-header:hover {
   background: #860f0f;
 }
@@ -130,7 +118,6 @@
   }
 }
 
-
 @media only screen and (min-width: 600px) {
   #card-container {
     max-width: 46%;
@@ -146,8 +133,3 @@
     margin: 13px 2%;
   }
 }
-
-
-
-
-

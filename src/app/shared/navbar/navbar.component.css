@@ -1,5 +1,7 @@
-
-
+#logo {
+  width: 86%;
+  margin-top: 10px;
+}
 
 .big-navigation-container {
   display: block;
@@ -14,22 +16,46 @@
   font-size: 32px;
   line-height: 2;
   font-weight: bold;
-  color: white;
+  color: #860f0f;
 }
 
 .mobile-navigation-controls {
-  color: #b55d3f;
+  color: #860f0f;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 400;
   font-family: sans-serif;
   text-align: center;
-  margin: 7px 0;
+  margin: 23px 0;
 }
 
 .screen-navigation-controls {
   font-size: 16px;
   font-weight: 600;
-  color: #fff;
+  color: #860f0f;
   text-decoration: none;
   margin: 0 20px;
+}
+
+.mat-toolbar {
+  background: #e8e8e8;
+}
+
+.mat-drawer {
+ background-color: #e8e8e8;
+}
+
+@media only screen and (max-width: 600px) {
+  #logo {
+    width: 86%;
+    margin-top: 10px;
+  }
+}
+
+
+@media only screen and (min-width: 600px) {
+
+}
+
+@media only screen and (min-width: 960px) {
+
 }
