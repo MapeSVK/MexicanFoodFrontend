@@ -18,5 +18,7 @@ export class OrderService {
   getOrderById(id: number): Observable<any> {
     return this.http.get(this.apiUrl + '/' + id);
   }
-
+  deleteOrder(id: number): Observable<any> {
+    return this.http.delete(this.apiUrl + '/' + id, { responseType: 'text'});
+  }
 }
