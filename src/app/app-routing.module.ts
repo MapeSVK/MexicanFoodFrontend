@@ -9,6 +9,7 @@ import {isCanActivate} from '@angular/router/src/utils/type_guards';
 import {AuthGuard} from './guard/auth.guard';
 import {OrderListComponent} from './orders/order-list/order-list.component';
 import {AboutUsComponent} from './about-us/about-us.component';
+import {CheckoutPageComponent} from "./checkout-page/checkout-page.component";
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent, canActivate: [AuthGuard]},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: 'meals-update/:id', component: MealsUpdateComponent},
   {path: 'login', component: LoginComponent},
   {path: 'orders', component: OrderListComponent},
-  {path: 'about-us', component: AboutUsComponent}
+  {path: 'about-us', component: AboutUsComponent},
+  {path: 'checkout', component: CheckoutPageComponent}
 ];
 
 @NgModule({

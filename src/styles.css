@@ -36,3 +36,7 @@ body {
 .mat-progress-spinner circle, .mat-spinner circle {
   stroke: #860f0f;
 }
+
+.mat-expansion-panel {
+  color: #fff;
+}

@@ -26,6 +26,8 @@ import {AuthGuard} from './guard/auth.guard';
 import {MealService} from './shared/services/meal.service';
 import { OrderListComponent } from './orders/order-list/order-list.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { WebStorageModule } from 'ngx-store';
+import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
     FooterComponent,
     LoginComponent,
     OrderListComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    CheckoutPageComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
     MatExpansionModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    WebStorageModule
   ],
   providers: [
     AuthGuard,

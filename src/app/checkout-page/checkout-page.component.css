@@ -1,0 +1,14 @@
+.cartMeals-main-container {
+  width: 80%;
+  margin: 0 auto;
+
+}
+
+.cartMeal-object-container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.cartMeal-object-container img {
+  width: 40%;
+}
