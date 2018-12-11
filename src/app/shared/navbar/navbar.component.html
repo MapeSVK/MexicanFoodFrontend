@@ -10,7 +10,7 @@
 
       <a routerLink="/meals" mat-button class="screen-navigation-controls">MEALS</a>
 
-      <a routerLink="/orders" mat-button class="screen-navigation-controls">ORDERS</a>
+      <a *ngIf="loggedIn" routerLink="/orders" mat-button class="screen-navigation-controls">ORDERS</a>
 
       <a routerLink="/about-us" mat-button class="screen-navigation-controls">ABOUT US</a>
 
