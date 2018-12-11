@@ -14,8 +14,7 @@ export class OrderListComponent implements OnInit {
   loading: boolean;
   orders: Order[];
   meals: Meal[];
-  constructor(private orderService: OrderService,
-              private mealService: MealService) { }
+  constructor(private orderService: OrderService) { }
 
   ngOnInit() {
     this.refreshOrders();
@@ -28,9 +27,10 @@ export class OrderListComponent implements OnInit {
       this.loading = true;
     });
   }
-  refreshMeals() {
-    this.mealService.getAllMeals().subscribe(meals => {
-      this.meals = meals;
+
+  deleteO(id: number) {
+    this.orderService.deleteOrder(id).subscribe(message => {
+      this.refreshOrders();
     });
   }
 }
