@@ -28,6 +28,7 @@ import { OrderListComponent } from './orders/order-list/order-list.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { WebStorageModule } from 'ngx-store';
 import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
+import { NoAccessPageComponent } from './shared/no-access-page/no-access-page.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
     LoginComponent,
     OrderListComponent,
     AboutUsComponent,
-    CheckoutPageComponent
+    CheckoutPageComponent,
+    NoAccessPageComponent
   ],
   imports: [
     BrowserModule,
