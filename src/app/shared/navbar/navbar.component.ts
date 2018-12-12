@@ -29,7 +29,6 @@ logOut() {
     take(1)
 ).subscribe(() => {
   this.loggedIn = false;
-  this.router.navigateByUrl('/login');
 });
 }
 }
