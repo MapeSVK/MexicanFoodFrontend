@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {Order} from '../models/order';
 import {HttpClient} from '@angular/common/http';
+import {Meal} from "../models/meal";
 
 
 @Injectable({
@@ -17,6 +18,10 @@ export class OrderService {
   }
   getOrderById(id: number): Observable<any> {
     return this.http.get(this.apiUrl + '/' + id);
+  }
+
+  createOrder(newOrder: Order): Observable<Order> {
+    return this.http.post<Order>(this.apiUrl, newOrder);
   }
 
 }

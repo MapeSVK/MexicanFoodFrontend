@@ -20,7 +20,14 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatListModule} from '@angular/material/list';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { LoginComponent } from './login/login.component';
-import {MatFormField, MatFormFieldModule, MatInput, MatInputModule, MatSelectModule} from '@angular/material';
+import {
+  MatDatepickerModule,
+  MatFormField,
+  MatFormFieldModule,
+  MatInput,
+  MatInputModule, MatNativeDateModule,
+  MatSelectModule
+} from '@angular/material';
 import {AuthenticationService} from './shared/services/authentication.service';
 import {AuthGuard} from './guard/auth.guard';
 import {MealService} from './shared/services/meal.service';
@@ -28,6 +35,11 @@ import { OrderListComponent } from './orders/order-list/order-list.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { WebStorageModule } from 'ngx-store';
 import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
+import { MakePaymentComponent } from './make-payment/make-payment.component';
+import { FormsModule } from '@angular/forms';
+
+
+
 
 @NgModule({
   declarations: [
@@ -41,7 +53,8 @@ import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
     LoginComponent,
     OrderListComponent,
     AboutUsComponent,
-    CheckoutPageComponent
+    CheckoutPageComponent,
+    MakePaymentComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +76,10 @@ import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    WebStorageModule
+    WebStorageModule,
+    FormsModule,
+    MatNativeDateModule,
+    MatDatepickerModule
   ],
   providers: [
     AuthGuard,

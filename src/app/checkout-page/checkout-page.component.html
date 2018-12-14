@@ -1,27 +1,66 @@
 <div class="cartMeals-main-container"></div>
 
-<div *ngFor="let cartMeals of mealsInCart" class="cartMeal-object-container">
+<!-- I will have a array of orderlines from the session storage so I can display each of them using ngFor, and I can
+work with this array and save it to the order with info taken from the forms after "final" button is pressed -->
+
+<div *ngFor="let orderLineMeal of orderLineMealsInCart" class="cartMeal-object-container">
   <div class="cartMealsSection">
-    <div class="cartMeal-picture-container"><img src="{{cartMeals.picture}}" alt=""></div>
-    <div class="cartMeal-title">{{cartMeals.name}}</div>
-    <div class="cartMeal-title">{{cartMeals.price}}</div>
+    <!--<div class="cartMeal-picture-container"><img src="{{cartMeals.picture}}" alt=""></div>  this and name need to be changed-->
+    <div class="cartMeal-title">{{orderLineMeal.mealId}}</div>
+    <div class="cartMeal-title">{{orderLineMeal.priceWhenBought}}</div>
+    <div class="cartMeal-title">{{orderLineMeal.quantity}}</div>
   </div>
 
   <div class="cartMealsActionsSection">
-    <div class="carMeal-action-delete-container"></div>
+    <div class="carMeal-action-delete-container">
+      <button (click)="deleteOrderLineMealFromCart(orderLineMeal)">Delete</button>
+    </div>
 
-    <div class="carMeal-action-quantity-container"></div>
+    <div class="carMeal-action-quantity-container">
+      <!--<button class="add-quantity-button" style="background-color: red" >+</button>-->
+      <mat-form-field>
+      <input type="number" matInput [(ngModel)]="orderLineMeal.quantity" (ngModelChange)="changeOrderLineMeal(orderLineMeal)">
+      </mat-form-field>
+    </div>
   </div>
 </div>
 
 <div class="global-actions">
-  <div class="clear-all-meals-button-container"><button>CLEAR</button></div>
+  <!--<div class="clear-all-meals-button-container"><button (click)="removeEverythingFromCart()">CLEAR</button></div>-->
   <div class="payment-button-button-container">
     <button mat-raised-button (click)="openDetails()">Continue to payment</button>
   </div>
 </div>
 
 <mat-expansion-panel [expanded]="detailsOpenState">
+
+  <form [formGroup]="customerDetailsForm" (ngSubmit)="save()">
+
+      <mat-form-field>
+        <input matInput placeholder="Your Name" formControlName="name">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Telephone Number" formControlName="telephoneNumber">
+      </mat-form-field>
+
+    <!-- <input type="text" id="input"> -->
+
+    <mat-form-field>
+      <textarea rows="6" matInput placeholder="Comment" formControlName="comment"></textarea>
+    </mat-form-field>
+
+      <div>
+        <button mat-raised-button style="background-color: #860f0f;" type="submit">
+          SAVE
+        </button>
+      </div>
+
+   <button (click)="getDateFromPicker()">GET</button>
+
+  </form>
+
+
 
 
   <button>PAYMENT</button>

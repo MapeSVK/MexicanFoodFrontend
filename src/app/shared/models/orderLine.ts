@@ -7,5 +7,4 @@ export class OrderLine {
   orderId: number;
   quantity: number;
   priceWhenBought: number;
-
 }
