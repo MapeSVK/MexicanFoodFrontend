@@ -1,24 +1,35 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {Order} from '../models/order';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {AuthenticationService} from './authentication.service';
 
-
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json',
+    'Authorization': 'my-auth-token'
+  })
+};
 @Injectable({
   providedIn: 'root'
 })
 export class OrderService {
   apiUrl = 'https://mexicanfooddeveloper.azurewebsites.net/api/orders';
-  // apiUrl = 'https://localhost:5001/api/orders';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private authenticationService: AuthenticationService) { }
   getAllOrders(): Observable<Order[]> {
-    return this.http.get<Order[]>(this.apiUrl);
+    httpOptions.headers =
+      httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
+    return this.http.get<Order[]>(this.apiUrl, httpOptions);
   }
   getOrderById(id: number): Observable<any> {
-    return this.http.get(this.apiUrl + '/' + id);
+    httpOptions.headers =
+      httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
+    return this.http.get(this.apiUrl + '/' + id, httpOptions);
   }
   deleteOrder(id: number): Observable<any> {
-    return this.http.delete(this.apiUrl + '/' + id, { responseType: 'text'});
+    httpOptions.headers =
+      httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
+    return this.http.delete(this.apiUrl + '/' + id, httpOptions);
   }
 }
