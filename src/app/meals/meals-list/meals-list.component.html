@@ -2,7 +2,7 @@
      fxLayout="column"
      fxFill
      fxLayoutGap="10px">
-  <div fxLayout="row" id="add-meal-container">
+  <div *ngIf="loggedIn" fxLayout="row" id="add-meal-container">
     <button mat-mini-fab color="primary" style="margin: 20px" routerLink="/meals-add" id="add-meal-button">
       <i class="fas fa-plus"></i>
     </button>
@@ -52,14 +52,14 @@
 
         <!-- Buttons for deletion / update -->
         <mat-card-actions fxLayout="row" fxLayoutGap="5px" id="meal-admin-buttons-container">
-          <button routerLink="/meals-update/{{meal.id}}"
+          <button *ngIf="loggedIn" routerLink="/meals-update/{{meal.id}}"
                   mat-mini-fab
                   color="primary"
                   id="button-update">
             <i class="fas fa-pencil-alt"></i>
           </button>
           <span fxFlex></span>
-          <button (click)="delete(meal.id)"
+          <button *ngIf="loggedIn" (click)="delete(meal.id)"
                   mat-mini-fab
                   color="accent"
                   id="button-delete">

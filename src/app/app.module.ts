@@ -37,8 +37,8 @@ import { WebStorageModule } from 'ngx-store';
 import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
 import { MakePaymentComponent } from './make-payment/make-payment.component';
 import { FormsModule } from '@angular/forms';
-
-
+import { NoAccessPageComponent } from './shared/no-access-page/no-access-page.component';
+import { NgIdleKeepaliveModule } from '@ng-idle/keepalive';
 
 
 @NgModule({
@@ -54,7 +54,8 @@ import { FormsModule } from '@angular/forms';
     OrderListComponent,
     AboutUsComponent,
     CheckoutPageComponent,
-    MakePaymentComponent
+    MakePaymentComponent,
+    NoAccessPageComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +80,8 @@ import { FormsModule } from '@angular/forms';
     WebStorageModule,
     FormsModule,
     MatNativeDateModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    NgIdleKeepaliveModule.forRoot()
   ],
   providers: [
     AuthGuard,
