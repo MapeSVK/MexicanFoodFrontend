@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {AuthenticationService} from '../services/authentication.service';
 import {Subscription} from 'rxjs';
 import {take} from 'rxjs/operators';
@@ -13,6 +13,9 @@ export class NavbarComponent implements OnInit {
 
   subscription: Subscription;
   loggedIn: boolean;
+
+@Output()
+contactClick = new EventEmitter();
 
   constructor(private authenticationService: AuthenticationService, private router: Router) {
   }
@@ -31,4 +34,8 @@ logOut() {
   this.loggedIn = false;
 });
 }
+
+  scrollToFooter() {
+   this.contactClick.emit();
+  }
 }

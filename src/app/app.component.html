@@ -8,9 +8,12 @@
 <div id="main-container">
 
   <section id="navbar-content-section">
-    <app-navbar></app-navbar>
+    <app-navbar (contactClick)="scrollToBottom()"></app-navbar>
   </section>
-<app-footer></app-footer>
+  <div #footerGoTo>
+    <app-footer></app-footer>
+  </div>
+
 </div>
 
 

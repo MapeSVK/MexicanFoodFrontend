@@ -26,7 +26,7 @@
             </mat-expansion-panel-header>
             <!-- Content after expansion -->
             <div class="expansion-content" *ngIf="order.orderLines && order.orderLines.length >= 1">
-              <div *ngFor="let ol of order.orderLines.slice(0,2)">
+              <div *ngFor="let ol of order.orderLines">
                 <p>
                   Item: {{ol.meal.name}}
                 </p>
