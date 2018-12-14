@@ -26,10 +26,8 @@ export class MealsListComponent implements OnInit {
   ngOnInit() {
     this.refresh();
     this.createIdle();
-    this.subscription = this.authenticationService.isLoggedIn
-      .subscribe(logg => {
-        this.loggedIn = logg;
-      });
+  //disableButton; // will disable button "add to cart" after it was clicked
+
   }
   createIdle() {
     this.idle.setIdle(80);

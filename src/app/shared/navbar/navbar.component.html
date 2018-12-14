@@ -14,7 +14,7 @@
 
       <a routerLink="/about-us" mat-button class="screen-navigation-controls">ABOUT US</a>
 
-      <a routerLink="#" mat-button class="screen-navigation-controls">CONTACT</a>
+      <a (click)="scrollToFooter()" mat-button class="screen-navigation-controls">CONTACT</a>
 
       <a *ngIf="loggedIn" (click)="logOut()" mat-button class="screen-navigation-controls">LOGOUT</a>
 
@@ -38,9 +38,9 @@
 
         <a *ngIf="loggedIn" routerLink="/orders" mat-button class="mobile-navigation-controls">ORDERS</a>
 
-        <a routerLink="/about-us" mat-button class="mobile-navigation-controls">ABOUT US</a>
+        <a routerLink="/about-us"  mat-button class="mobile-navigation-controls">ABOUT US</a>
 
-        <a routerLink="" mat-button class="mobile-navigation-controls">CONTACT</a>
+        <a  mat-button class="mobile-navigation-controls">CONTACT</a>
 
         <a *ngIf="loggedIn" (click)="logOut()" mat-button class="mobile-navigation-controls">LOGOUT</a>
 

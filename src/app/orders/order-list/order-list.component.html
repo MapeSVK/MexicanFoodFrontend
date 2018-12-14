@@ -14,8 +14,10 @@
       <mat-card>
         <mat-card-content>
           <div class="order-title">Order: {{order.id}}</div>
-          <p class="order-date">Ordered: {{order.orderDate}}</p>
-          <p class="order-date">Time of pick up: {{order.pickUpDate}}</p>
+          <p class="order-date"> Customer name: {{order.customerName}}</p>
+          <p class="order-date"> Phone Nr: {{order.mobilenumber}}</p>
+          <p class="order-date">Ordered: {{order.orderedDateAndTime | date:' H:m, d/L/yy '}}</p>
+          <p class="order-date">Time of pick up: {{order.pickUpDateAndTime | date:' H:m, d/L/yy '}}</p>
           <mat-expansion-panel>
             <mat-expansion-panel-header id="expansion-panel-header">
               <mat-panel-title id="expansion-panel-title">
@@ -24,7 +26,7 @@
             </mat-expansion-panel-header>
             <!-- Content after expansion -->
             <div class="expansion-content" *ngIf="order.orderLines && order.orderLines.length >= 1">
-              <div *ngFor="let ol of order.orderLines.slice(0,2)">
+              <div *ngFor="let ol of order.orderLines">
                 <p>
                   Item: {{ol.meal.name}}
                 </p>

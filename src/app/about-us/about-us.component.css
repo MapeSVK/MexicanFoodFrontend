@@ -7,12 +7,13 @@
 
 .title-container{
   margin: 16px 0;
-  width: 100%;
+  width: auto%;
   height: auto;
   background-color: #860f0f;
 }
 
 .img-container{
   height: auto;
+  width: auto;
   margin: 16px 0;
 }
