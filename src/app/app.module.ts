@@ -29,6 +29,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { WebStorageModule } from 'ngx-store';
 import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
 import { NoAccessPageComponent } from './shared/no-access-page/no-access-page.component';
+import { NgIdleKeepaliveModule } from '@ng-idle/keepalive';
+
 
 @NgModule({
   declarations: [
@@ -65,7 +67,8 @@ import { NoAccessPageComponent } from './shared/no-access-page/no-access-page.co
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    WebStorageModule
+    WebStorageModule,
+    NgIdleKeepaliveModule.forRoot()
   ],
   providers: [
     AuthGuard,
