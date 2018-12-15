@@ -3,7 +3,6 @@ import {DEFAULT_INTERRUPTSOURCES, Idle} from '@ng-idle/core';
 import {Keepalive} from '@ng-idle/keepalive';
 import {take} from 'rxjs/operators';
 import {AuthenticationService} from './authentication.service';
-import {MatDialog} from '@angular/material';
 
 @Injectable({
   providedIn: 'root'
