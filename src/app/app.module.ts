@@ -30,8 +30,8 @@ import { WebStorageModule } from 'ngx-store';
 import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
 import { NoAccessPageComponent } from './shared/no-access-page/no-access-page.component';
 import { NgIdleKeepaliveModule } from '@ng-idle/keepalive';
-import {MatDialog} from '@angular/material/typings/dialog';
-
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogWindowComponent } from './shared/dialog-window/dialog-window.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +46,8 @@ import {MatDialog} from '@angular/material/typings/dialog';
     OrderListComponent,
     AboutUsComponent,
     CheckoutPageComponent,
-    NoAccessPageComponent
+    NoAccessPageComponent,
+    DialogWindowComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +71,7 @@ import {MatDialog} from '@angular/material/typings/dialog';
     MatSelectModule,
     WebStorageModule,
     NgIdleKeepaliveModule.forRoot(),
-    MatDialog
+    MatDialogModule
   ],
   providers: [
     AuthGuard,
