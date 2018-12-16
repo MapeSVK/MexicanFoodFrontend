@@ -4,9 +4,9 @@ export class Order {
   id?: number;
   mobilenumber: string;
   customerName: string;
-  pickUpDate?: Date;
-  orderDate?: Date;
+  pickUpDateAndTime?: Date;
+  orderedDateAndTime?: Date;
   comment: string;
   orderLines?: OrderLine[];
-
+  totalPrice:  number;
 }

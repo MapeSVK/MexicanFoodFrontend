@@ -40,7 +40,6 @@ import { FormsModule } from '@angular/forms';
 import { NoAccessPageComponent } from './shared/no-access-page/no-access-page.component';
 import { NgIdleKeepaliveModule } from '@ng-idle/keepalive';
 
-
 @NgModule({
   declarations: [
     AppComponent,
