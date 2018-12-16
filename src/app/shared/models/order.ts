@@ -8,5 +8,5 @@ export class Order {
   orderedDateAndTime?: Date;
   comment: string;
   orderLines?: OrderLine[];
-
+  totalPrice:  number;
 }

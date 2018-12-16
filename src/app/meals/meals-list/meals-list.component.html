@@ -7,16 +7,6 @@
       <i class="fas fa-plus"></i>
     </button>
   </div>
-  <!--&lt;!&ndash; <div fxLayout="row"
-        fxLayoutAlign="center end">
-
-     &lt;!&ndash;<mat-paginator [length]="count"
-                    [pageSize]="pageEvent.pageSize"
-                    [pageSizeOptions]="[6, 12, 24, 120]"
-                    (page)="changePage($event)">
-     </mat-paginator>&ndash;&gt;
- &ndash;&gt;-->
-
   <h4 *ngIf="!loading"
       fxFill
       fxLayoutAlign="center center">
@@ -46,7 +36,7 @@
 
           <div class="price-order-container">
             <div class="meal-price">{{meal.price}} DKK</div>
-            <button (click)="addToSessionStorage(meal)" class="meal-order-button">ADD TO CART</button>
+            <button (click)="addToSessionStorage(meal.id, meal.price)" class="meal-order-button">ADD TO CART</button>
           </div>
         </mat-card-content>
 

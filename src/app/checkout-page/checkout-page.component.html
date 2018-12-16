@@ -1,30 +1,87 @@
-<div class="cartMeals-main-container"></div>
+<div class="cartMeals-main-container">
+  <!-- orderLineMealsInCart is array of orderLine objects taken from the session storage -->
+  <div *ngFor="let orderLineMeal of orderLineMealsInCart" class="cartMeal-object-container">
+    <div class="cartMealsSection">
 
-<div *ngFor="let cartMeals of mealsInCart" class="cartMeal-object-container">
-  <div class="cartMealsSection">
-    <div class="cartMeal-picture-container"><img src="{{cartMeals.picture}}" alt=""></div>
-    <div class="cartMeal-title">{{cartMeals.name}}</div>
-    <div class="cartMeal-title">{{cartMeals.price}}</div>
+      <!-- getting all the meals from mealService and then displaying their pictures if the id is the same -->
+      <div *ngFor="let meal of mealsForImage">
+        <div *ngIf="meal.id === orderLineMeal.mealId">
+          <img src="{{meal.picture}}" alt="" class="cartMeal-picture">
+        </div>
+      </div>
+
+      <div class="cartMeal-title">{{orderLineMeal.mealId}}</div>
+      <div class="cartMeal-title">{{orderLineMeal.priceWhenBought}}</div>
+      <div class="cartMeal-title">{{orderLineMeal.quantity}}</div>
+      <div class="mat-card-title">{{orderLineMeal.quantity * orderLineMeal.priceWhenBought}}</div>
+    </div>
+
+    <div class="cartMealsActionsSection">
+      <div class="carMeal-action-delete-container">
+        <button (click)="deleteOrderLineMealFromCart(orderLineMeal)">Delete</button>
+      </div>
+
+      <div class="carMeal-action-quantity-container">
+        <!--<button class="add-quantity-button" style="background-color: red" >+</button>-->
+        <mat-form-field>
+        <input type="number" matInput [(ngModel)]="orderLineMeal.quantity" (ngModelChange)="changeOrderLineMeal(orderLineMeal)">
+        </mat-form-field>
+      </div>
+    </div>
   </div>
 
-  <div class="cartMealsActionsSection">
-    <div class="carMeal-action-delete-container"></div>
+  <div>{{totalPrice}}</div>
 
-    <div class="carMeal-action-quantity-container"></div>
+  <div class="global-actions">
+      <button mat-raised-button (click)="openDetails()">Continue to payment</button>
   </div>
+
+  <mat-expansion-panel [expanded]="detailsOpenState">
+
+    <form [formGroup]="customerDetailsForm" (ngSubmit)="save()">
+
+        <mat-form-field>
+          <input matInput placeholder="Your Name" formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Telephone Number" formControlName="telephoneNumber">
+        </mat-form-field>
+
+        <mat-form-field>
+          <textarea rows="6" matInput placeholder="Comment" formControlName="comment"></textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Choose a date" formControlName="orderDate" readonly>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker touchUi disabled="false"></mat-datepicker>
+        </mat-form-field>
+
+        <button mat-raised-button type="submit">
+            SAVE
+        </button>
+    </form>
+
+    <!-- here customer specifies hours (pickUpDate hours) -->
+    <mat-form-field>
+      <mat-select placeholder="Hour" [(ngModel)]="selectedHourString">
+        <mat-option *ngFor="let hour of hoursString" [value]="hour">
+          {{hour}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- here customer specifies minutes (pickUpDate minutes) -->
+    <mat-form-field>
+      <mat-select placeholder="Minutes" [(ngModel)]="selectedMinuteString">
+        <mat-option *ngFor="let minutes of minutesString" [value]="minutes">
+          {{minutes}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+  </mat-expansion-panel>
+
 </div>
-
-<div class="global-actions">
-  <div class="clear-all-meals-button-container"><button>CLEAR</button></div>
-  <div class="payment-button-button-container">
-    <button mat-raised-button (click)="openDetails()">Continue to payment</button>
-  </div>
-</div>
-
-<mat-expansion-panel [expanded]="detailsOpenState">
-
-
-  <button>PAYMENT</button>
-
-</mat-expansion-panel>
-

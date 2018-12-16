@@ -20,7 +20,14 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatListModule} from '@angular/material/list';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { LoginComponent } from './login/login.component';
-import {MatFormField, MatFormFieldModule, MatInput, MatInputModule, MatSelectModule} from '@angular/material';
+import {
+  MatDatepickerModule,
+  MatFormField,
+  MatFormFieldModule,
+  MatInput,
+  MatInputModule, MatNativeDateModule,
+  MatSelectModule
+} from '@angular/material';
 import {AuthenticationService} from './shared/services/authentication.service';
 import {AuthGuard} from './guard/auth.guard';
 import {MealService} from './shared/services/meal.service';
@@ -28,9 +35,10 @@ import { OrderListComponent } from './orders/order-list/order-list.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { WebStorageModule } from 'ngx-store';
 import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
+import { MakePaymentComponent } from './make-payment/make-payment.component';
+import { FormsModule } from '@angular/forms';
 import { NoAccessPageComponent } from './shared/no-access-page/no-access-page.component';
 import { NgIdleKeepaliveModule } from '@ng-idle/keepalive';
-
 
 @NgModule({
   declarations: [
@@ -45,6 +53,7 @@ import { NgIdleKeepaliveModule } from '@ng-idle/keepalive';
     OrderListComponent,
     AboutUsComponent,
     CheckoutPageComponent,
+    MakePaymentComponent,
     NoAccessPageComponent
   ],
   imports: [
@@ -69,6 +78,9 @@ import { NgIdleKeepaliveModule } from '@ng-idle/keepalive';
     MatSelectModule,
     WebStorageModule,
     NgIdleKeepaliveModule.forRoot(),
+    FormsModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
   ],
   providers: [
     AuthGuard,
