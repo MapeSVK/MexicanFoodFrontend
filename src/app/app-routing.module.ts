@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: 'meals-update/:id', component: MealsUpdateComponent, canActivate: [AdminGuard]},
   {path: 'login', component: LoginComponent},
   {path: 'orders', component: OrderListComponent, canActivate: [AdminGuard]},
-  {path: 'about-us', component: AboutUsComponent},
+  {path: 'about-us', component: AboutUsComponent, canActivate: [AuthGuard]},
   {path: 'checkout', component: CheckoutPageComponent},
   {path: '404', component: NoAccessPageComponent},
   { path: '**', redirectTo: '404' }
