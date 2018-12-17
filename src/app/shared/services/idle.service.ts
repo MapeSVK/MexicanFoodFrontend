@@ -14,7 +14,7 @@ export class IdleService {
   idleState = 'Not started.';
 
   constructor(private idle: Idle, private keepalive: Keepalive, private authenticationService: AuthenticationService, public dialog: MatDialog) {
-    this.idle.setIdle(5);
+    this.idle.setIdle(175);
     this.idle.setTimeout(5);
     this.idle.setInterrupts(DEFAULT_INTERRUPTSOURCES);
     this.idle.onIdleEnd.subscribe(() => this.idleState = 'No longer idle.');
