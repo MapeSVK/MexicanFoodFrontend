@@ -3,6 +3,8 @@ import {DEFAULT_INTERRUPTSOURCES, Idle} from '@ng-idle/core';
 import {Keepalive} from '@ng-idle/keepalive';
 import {take} from 'rxjs/operators';
 import {AuthenticationService} from './authentication.service';
+import {MatDialog} from '@angular/material';
+import {DialogWindowComponent} from '../dialog-window/dialog-window.component';
 
 @Injectable({
   providedIn: 'root'
@@ -11,13 +13,14 @@ export class IdleService {
   loggedIn: boolean;
   idleState = 'Not started.';
 
-  constructor(private idle: Idle, private keepalive: Keepalive, private authenticationService: AuthenticationService) {
-    this.idle.setIdle(5);
+  constructor(private idle: Idle, private keepalive: Keepalive, private authenticationService: AuthenticationService, public dialog: MatDialog) {
+    this.idle.setIdle(175);
     this.idle.setTimeout(5);
     this.idle.setInterrupts(DEFAULT_INTERRUPTSOURCES);
     this.idle.onIdleEnd.subscribe(() => this.idleState = 'No longer idle.');
     this.idle.onTimeout.subscribe(() => {
       this.idleState = 'Timed out!';
+      this.dialog.open(DialogWindowComponent);
       this.authenticationService.logout()
         .pipe(
           take(1)

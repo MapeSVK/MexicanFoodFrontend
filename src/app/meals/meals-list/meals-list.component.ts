@@ -23,10 +23,9 @@ export class MealsListComponent implements OnInit {
   meals: Meal[];
   subscription: Subscription;
   loggedIn: boolean;
-  constructor(private mealService: MealService, private authenticationService: AuthenticationService, private idle: IdleService) { }
+  constructor(private mealService: MealService, private authenticationService: AuthenticationService) { }
   ngOnInit() {
     this.refresh();
-    this.idle.startIdle();
   //disableButton; // will disable button "add to cart" after it was clicked
     this.subscription = this.authenticationService.isLoggedIn
       .subscribe(logg => {
@@ -52,7 +51,6 @@ export class MealsListComponent implements OnInit {
     orderLineMeal.mealId = mealId;
     orderLineMeal.priceWhenBought = mealPrice;
     orderLineMeal.quantity = 1; //set quantity to 1, then disable the button for adding to the cart. Quantity can be then changed in checkout page
-
     this.orderLineMealsInCart.push(orderLineMeal);
     //this.disableButton(meal);
   }

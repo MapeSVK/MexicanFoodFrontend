@@ -39,6 +39,8 @@ import { MakePaymentComponent } from './make-payment/make-payment.component';
 import { FormsModule } from '@angular/forms';
 import { NoAccessPageComponent } from './shared/no-access-page/no-access-page.component';
 import { NgIdleKeepaliveModule } from '@ng-idle/keepalive';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogWindowComponent } from './shared/dialog-window/dialog-window.component';
 
 @NgModule({
   declarations: [
@@ -54,8 +56,10 @@ import { NgIdleKeepaliveModule } from '@ng-idle/keepalive';
     AboutUsComponent,
     CheckoutPageComponent,
     MakePaymentComponent,
-    NoAccessPageComponent
+    NoAccessPageComponent,
+    DialogWindowComponent
   ],
+  entryComponents: [DialogWindowComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -78,6 +82,7 @@ import { NgIdleKeepaliveModule } from '@ng-idle/keepalive';
     MatSelectModule,
     WebStorageModule,
     NgIdleKeepaliveModule.forRoot(),
+    MatDialogModule,
     FormsModule,
     MatNativeDateModule,
     MatDatepickerModule,
