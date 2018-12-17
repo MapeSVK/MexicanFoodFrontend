@@ -21,7 +21,6 @@ const routes: Routes = [
   {path: 'about-us', component: AboutUsComponent},
   {path: 'checkout', component: CheckoutPageComponent},
   {path: '404', component: NoAccessPageComponent},
-  {path: '401', component: DialogWindowComponent},
   { path: '**', redirectTo: '404' }
 ];
 

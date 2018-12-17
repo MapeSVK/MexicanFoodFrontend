@@ -49,6 +49,7 @@ import { DialogWindowComponent } from './shared/dialog-window/dialog-window.comp
     NoAccessPageComponent,
     DialogWindowComponent
   ],
+  entryComponents: [DialogWindowComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
