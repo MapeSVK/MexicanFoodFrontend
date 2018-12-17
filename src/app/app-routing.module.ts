@@ -7,10 +7,9 @@ import {LoginComponent} from './login/login.component';
 import {AuthGuard} from './guard/auth.guard';
 import {OrderListComponent} from './orders/order-list/order-list.component';
 import {AboutUsComponent} from './about-us/about-us.component';
-import {CheckoutPageComponent} from "./checkout-page/checkout-page.component";
+import {CheckoutPageComponent} from './checkout-page/checkout-page.component';
 import {AdminGuard} from './guard/admin.guard';
 import {NoAccessPageComponent} from './shared/no-access-page/no-access-page.component';
-import {DialogWindowComponent} from './shared/dialog-window/dialog-window.component';
 
 const routes: Routes = [
   {path: 'meals', component: MealsListComponent, canActivate: [AuthGuard]},

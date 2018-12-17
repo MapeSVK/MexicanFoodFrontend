@@ -20,7 +20,7 @@ export class IdleService {
     this.idle.onIdleEnd.subscribe(() => this.idleState = 'No longer idle.');
     this.idle.onTimeout.subscribe(() => {
       this.idleState = 'Timed out!';
-      const dialogRef = this.dialog.open(DialogWindowComponent);
+      this.dialog.open(DialogWindowComponent);
       this.authenticationService.logout()
         .pipe(
           take(1)

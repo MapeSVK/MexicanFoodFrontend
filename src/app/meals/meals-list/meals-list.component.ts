@@ -18,10 +18,9 @@ export class MealsListComponent implements OnInit {
   meals: Meal[];
   subscription: Subscription;
   loggedIn: boolean;
-  constructor(private mealService: MealService, private authenticationService: AuthenticationService, private idle: IdleService) { }
+  constructor(private mealService: MealService, private authenticationService: AuthenticationService) { }
   ngOnInit() {
     this.refresh();
-    this.idle.startIdle();
     this.subscription = this.authenticationService.isLoggedIn
       .subscribe(logg => {
         this.loggedIn = logg;
@@ -39,10 +38,8 @@ export class MealsListComponent implements OnInit {
       this.refresh();
     });
   }
-
   addToSessionStorage(meal: Meal) {
     this.mealsInCart.push(meal);
-    //this.disableButton(meal);
   }
   /*disableButton(meal: Meal): boolean {
     return true;
