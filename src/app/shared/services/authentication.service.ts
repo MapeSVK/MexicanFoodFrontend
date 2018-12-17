@@ -44,10 +44,10 @@ export class AuthenticationService {
   }
   getTokenExpirationDate(token: string): Date {
     const decoded = jwt_decode(token);
-    if (decoded.exp === undefined) { return null; }
+    if (decoded.valueOf() === undefined) { return null; }
 
     const date = new Date(0);
-    date.setUTCSeconds(decoded.exp);
+    date.setUTCSeconds(<number>decoded.valueOf());
     return date;
   }
   isTokenExpired(token?: string): boolean {
