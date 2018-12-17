@@ -1,14 +1,119 @@
-.cartMeals-main-container {
-  width: 80%;
+.meals-in-cart-container {
+  width: 75%;
   margin: 0 auto;
-
+  border-right: 2px solid #e8e8e8;
+  border-left: 2px solid #e8e8e8;
 }
 
 .cartMeal-object-container {
-  max-width: 90%;
-  margin: 0 auto;
+  overflow: auto;
+  margin-top: 2em;
+  border-bottom: 1px solid #e8e8e8;
 }
 
-.cartMeal-object-container img {
-  width: 40%;
+.cartMeal-object-container:first-child {
+  margin-top: 0em;
+  padding-top: 2em;
+}
+
+.meal-in-cart-first-part-container {
+  width: 50%;
+  float: left;
+}
+
+.meal-in-cart-second-part-container {
+  width: 50%;
+  float: right;
+}
+
+.cartMeal-picture {
+  width: 20%;
+}
+
+.cartMeal-title {
+  display: inline-block;
+  margin: 0 0 0 8%;
+}
+
+.remove-orderline-button {
+  color: #860f0f;
+  border: 1px solid #e8e8e8;
+  background-color: #e8e8e8;
+  border-radius: 25px;
+  padding: 7px 9px;
+  font-size: 14px;
+  margin: 0 8% 0 5%;
+}
+
+
+.meal-in-cart-second-part-container p {
+  display: inline-block;
+}
+
+.cartMeal-price-calculated {
+  margin-right: 25%;
+}
+
+.cartMeal-quantity {
+  color: #860f0f;
+  border: 1px solid #e8e8e8;
+  background-color: #e8e8e8;
+  border-radius: 25px;
+  padding: 8px 9px;
+  font-size: 16px;
+  margin-right: 2%;
+}
+
+.increase-quantity-button {
+  color: #860f0f;
+  border: 1px solid #e8e8e8;
+  background-color: #e8e8e8;
+  border-radius: 25px;
+  padding: 2px 9px;
+  font-size: 24px;
+}
+
+.decrease-quantity-button {
+  color: #860f0f;
+  border: 1px solid #e8e8e8;
+  background-color: #e8e8e8;
+  border-radius: 25px;
+  padding: 2px 11px;
+  font-size: 24px;
+  margin-left: 2%;
+}
+
+#total-price {
+  margin-top: 40px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.global-actions {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.global-actions button {
+  background-color: #008000e0;
+  color: #fff;
+  font-size: 14px;
+}
+
+#form-group input, textarea {
+  color: #000 !important;
+}
+
+.form-part-1 {
+
+}
+
+#order-button {
+
+}
+
+.expansion-panel-my-content {
+  width: 45% !important;
+  margin: 0 auto !important;
 }

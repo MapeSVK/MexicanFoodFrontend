@@ -45,8 +45,8 @@ export class CheckoutPageComponent implements OnInit {
   hoursString: string[] = ["10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21"];
   minutesString: string[] = ["00", "15", "30", "45"];
 
-  // array of meals just to get an image
-  mealsForImage: Meal[];
+  // array of meals just to get an image and meal title
+  meals: Meal[];
 
   constructor(private orderService: OrderService, private router: Router, private mealService: MealService) { }
 
@@ -62,21 +62,13 @@ export class CheckoutPageComponent implements OnInit {
   // getting all the meals just to get their pictures
   getAllMeals() {
     this.mealService.getAllMeals().subscribe( listOfMeals => {
-      this.mealsForImage = listOfMeals;
+      this.meals = listOfMeals;
     });
   }
 
   // when button is clicked, expansion panel will open
   openDetails() {
     this.detailsOpenState = !this.detailsOpenState
-  }
-
-  // used when customer decides to change quantity.
-  // meal with old value of quantity will be changed for "new" meal with the new value of quantity
-  changeOrderLineMeal(orderLineMeal: OrderLine) {
-    const index = this.orderLineMealsInCart.indexOf(orderLineMeal);
-    this.orderLineMealsInCart[index] = orderLineMeal;
-    (<any>this.orderLineMealsInCart).save(); // <- saving to the session storage
   }
 
   // deletes orderLineMeal from the array on specified index
@@ -97,6 +89,40 @@ export class CheckoutPageComponent implements OnInit {
         ({quantity:1,
           priceWhenBought:sum.priceWhenBought+x.quantity*x.priceWhenBought}),
       {quantity:1,priceWhenBought:0}).priceWhenBought;
+  }
+
+  // used when customer decides to change quantity.
+  // meal with old value of quantity will be changed for "new" meal with the new value of quantity
+  decreaseQuantity(orderLineMeal: OrderLine) {
+    orderLineMeal.quantity--;
+    const index = this.orderLineMealsInCart.indexOf(orderLineMeal);
+    this.orderLineMealsInCart[index] = orderLineMeal;
+    (<any>this.orderLineMealsInCart).save();
+  }
+
+  // used when customer decides to change quantity.
+  // meal with old value of quantity will be changed for "new" meal with the new value of quantity
+  increaseQuantity(orderLineMeal: OrderLine) {
+    orderLineMeal.quantity++;
+    const index = this.orderLineMealsInCart.indexOf(orderLineMeal);
+    this.orderLineMealsInCart[index] = orderLineMeal;
+    (<any>this.orderLineMealsInCart).save();
+  }
+
+  getMealPicture(orderLineMeal: OrderLine): string {
+    for (let meal of this.meals) {
+      if (meal.id === orderLineMeal.mealId) {
+        return meal.picture;
+      }
+    }
+  }
+
+  getMealName(orderLineMeal: OrderLine): string {
+    for (let meal of this.meals) {
+      if (meal.id === orderLineMeal.mealId) {
+        return meal.name;
+      }
+    }
   }
 
   save() {
