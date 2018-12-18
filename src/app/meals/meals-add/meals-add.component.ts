@@ -24,7 +24,10 @@ export class MealsAddComponent implements OnInit {
     const mealFromFields = this.mealForm.value;
     this.mealService.createMeal(mealFromFields).subscribe( () => {
       this.router.navigateByUrl('/meals');
-    });
+    },
+      error => {
+        console.log(error.message);
+      });
   }
 
 }

@@ -31,13 +31,19 @@ export class MealsUpdateComponent implements OnInit {
         picture: meal.picture,
         price: meal.price
       });
-    });
+    },
+      error => {
+        console.log(error.message);
+      });
   }
   save() {
     const updatedMeal = this.mealForm.value;
     updatedMeal.id = this.id;
     this.mealService.updateMeal(this.id, updatedMeal).subscribe( () => {
       this.router.navigateByUrl('/meals');
-    });
+    },
+      error => {
+        console.log(error.message);
+      });
   }
 }

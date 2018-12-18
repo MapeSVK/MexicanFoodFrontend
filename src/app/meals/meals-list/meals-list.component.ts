@@ -30,19 +30,28 @@ export class MealsListComponent implements OnInit {
     this.subscription = this.authenticationService.isLoggedIn
       .subscribe(logg => {
         this.loggedIn = logg;
-      });
+      },
+        error => {
+          console.log(error.message);
+        });
   }
   refresh() {
     this.loading = false;
     this.mealService.getAllMeals().subscribe( listOfMeals => {
       this.meals = listOfMeals;
       this.loading = true;
-    });
+    },
+      error => {
+        console.log(error.message);
+      });
   }
   delete(id: number) {
     this.mealService.deleteMeal(id).subscribe(() => {
       this.refresh();
-    });
+    },
+      error => {
+        console.log(error.message);
+      });
   }
 
   //session storage saves array of order lines

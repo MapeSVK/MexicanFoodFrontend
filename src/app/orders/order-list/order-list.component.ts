@@ -25,12 +25,18 @@ export class OrderListComponent implements OnInit {
     this.orderService.getAllOrders().subscribe( listOfOrders => {
       this.orders = listOfOrders;
       this.loading = true;
-    });
+    },
+      error => {
+        console.log(error.message);
+      });
   }
 
   deleteO(id: number) {
     this.orderService.deleteOrder(id).subscribe(message => {
       this.refreshOrders();
-    });
+    },
+      error => {
+        console.log(error.message);
+      });
   }
 }
