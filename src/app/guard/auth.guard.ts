@@ -9,20 +9,21 @@ import {Subscription} from 'rxjs';
 })
 export class AuthGuard implements CanActivate {
   constructor(private router: Router, private authenticationService: AuthenticationService) { }
-  loggedIn: boolean;
   canActivate() {
 
       if (this.authenticationService.isTokenExpired()) {
-        this.authenticationService.logout()
-          .pipe(
-            take(1)
-          ).subscribe(() => {
-          this.loggedIn = false;
-        });
+      this.logOut();
         return true;
       }
       // logged in so return true
     // not logged in so redirect to login page
     return true;
+  }
+  logOut() {
+    this.authenticationService.logout()
+      .pipe(
+        take(1)
+      ).subscribe(() => {
+    });
   }
 }
