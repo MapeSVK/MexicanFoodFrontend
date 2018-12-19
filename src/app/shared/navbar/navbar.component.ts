@@ -44,8 +44,6 @@ export class NavbarComponent implements OnInit, DoCheck {
         this.loggedIn = logg;
       });
 
-    /*this.observableArrayOfOrderLines = of(this.orderLineMealsInCart);
-    this.observableArrayOfOrderLines.subscribe(result => {console.log(result.length)});*/
   }
 
 logOut() {
