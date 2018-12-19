@@ -1,4 +1,4 @@
-<div style="height: 100vh;">
+<div>
 
   <mat-toolbar color="primary">
 
@@ -7,6 +7,7 @@
     <div fxShow="true" fxHide.lt-sm="true" class="big-navigation-container">
 
       <!-- The following menu items will be hidden on small size screens -->
+      <a routerLink="/checkout" class="screen-navigation-controls"><i class="fas fa-shopping-cart"></i>{{itemsInCart}}</a>
 
       <a routerLink="/meals" mat-button class="screen-navigation-controls">MEALS</a>
 
@@ -22,6 +23,7 @@
 
     <div fxShow="true" fxHide.gt-xs="true" class="big-navigation-container">
 
+      <a routerLink="/checkout" class="screen-navigation-controls"><i class="fas fa-shopping-cart"></i></a>
       <button (click)="sidenav.toggle()"><i class="fas fa-bars" id="small-navigation-icon"></i></button>
 
     </div>

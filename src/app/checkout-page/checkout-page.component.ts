@@ -46,17 +46,17 @@ export class CheckoutPageComponent implements OnInit {
   minutesString: string[] = ["00", "15", "30", "45"];
 
   // array of meals just to get an image and meal title
-  meals: Meal[];
+  meals: Meal[] = [];
 
-  constructor(private orderService: OrderService, private router: Router, private mealService: MealService) { }
+  constructor(private orderService: OrderService, private router: Router, private mealService: MealService) {
+    this.getAllMeals();
+  }
 
   ngOnInit() {
     this.maxDate = new Date(this.todayDate.getFullYear(), this.todayDate.getMonth()); //init but the day is specified bellow
     this.maxDate.setDate(this.todayDate.getDate() + 14); // max 2 weeks from now
 
     this.minDate = new Date(this.todayDate.getFullYear(), this.todayDate.getMonth(),this.todayDate.getDate());
-
-    this.getAllMeals();
   }
 
   // getting all the meals just to get their pictures
@@ -120,7 +120,7 @@ export class CheckoutPageComponent implements OnInit {
   getMealName(orderLineMeal: OrderLine): string {
     for (let meal of this.meals) {
       if (meal.id === orderLineMeal.mealId) {
-        return meal.name;
+          return meal.name;
       }
     }
   }
