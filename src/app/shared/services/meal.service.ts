@@ -14,6 +14,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class MealService {
+
   apiUrl = 'https://mexicanfooddeveloper.azurewebsites.net/api/meals';
   constructor(private http: HttpClient, private authenticationService: AuthenticationService) { }
   getAllMeals(): Observable<Meal[]> {

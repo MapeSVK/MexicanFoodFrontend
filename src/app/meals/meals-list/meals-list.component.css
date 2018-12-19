@@ -111,8 +111,6 @@
   float: right;
 }
 
-
-
 .mat-expansion-panel:not(.mat-expanded):not([aria-disabled=true]) .mat-expansion-panel-header:hover {
   background: #860f0f;
 }
@@ -120,6 +118,13 @@
 .expansion-content[_ngcontent-c6] div[_ngcontent-c6] {
   background-color: #860f0f;
   color: #e8e8e8;
+}
+
+/* when 'add to cart' button is disabled */
+.meal-order-button:disabled {
+  background-color: #cccccca6;
+  color: #666666;
+  border: 1px solid #ccc;
 }
 
 @media only screen and (max-width: 600px) {
