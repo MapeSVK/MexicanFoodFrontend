@@ -33,20 +33,20 @@
         <form [formGroup]="customerDetailsForm" id="form-group">
 
         <div class="form-part-1">
-          <mat-form-field>
+          <mat-form-field id="name-input">
             <input matInput placeholder="Your Name" formControlName="name">
           </mat-form-field>
 
-          <mat-form-field>
+          <mat-form-field id="number-input">
             <input matInput placeholder="Telephone Number" formControlName="telephoneNumber">
           </mat-form-field>
 
-          <mat-form-field>
-            <textarea rows="6" matInput placeholder="Comment" formControlName="comment"></textarea>
+          <mat-form-field id="comment-area">
+            <textarea matInput placeholder="Comment" formControlName="comment"></textarea>
           </mat-form-field>
         </div>
 
-          <mat-form-field>
+          <mat-form-field id="date-picker-input">
             <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Choose a date" formControlName="orderDate" readonly>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker touchUi disabled="false"></mat-datepicker>
@@ -56,7 +56,7 @@
 
       <div class="form-part-2">
         <!-- here customer specifies hours (pickUpDate hours) -->
-        <mat-form-field>
+        <mat-form-field id="hours-input">
           <mat-select placeholder="Hour" [(ngModel)]="selectedHourString">
             <mat-option *ngFor="let hour of hoursString" [value]="hour">
               {{hour}}
@@ -65,7 +65,7 @@
         </mat-form-field>
 
         <!-- here customer specifies minutes (pickUpDate minutes) -->
-        <mat-form-field>
+        <mat-form-field id="minutes-input">
           <mat-select placeholder="Minutes" [(ngModel)]="selectedMinuteString">
             <mat-option *ngFor="let minutes of minutesString" [value]="minutes">
               {{minutes}}
@@ -74,9 +74,11 @@
         </mat-form-field>
       </div>
 
-      <button mat-raised-button (click)="save()" id="order-button">
-        ORDER!
-      </button>
+      <div id="order-button-container">
+        <button mat-raised-button (click)="save()" id="order-button">
+          ORDER!
+        </button>
+      </div>
 
     </div>
   </mat-expansion-panel>

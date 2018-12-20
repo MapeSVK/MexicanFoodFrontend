@@ -105,17 +105,67 @@
   color: #000 !important;
 }
 
-.form-part-1 {
-
-}
-
-#order-button {
-
+.form-part-2 {
+  overflow: auto;
 }
 
 .expansion-panel-my-content {
-  width: 45% !important;
+  width: 95% !important;
   margin: 0 auto !important;
+  text-align: center;
+}
+
+
+#name-input {
+  margin-right: 3%;
+}
+
+#number-input {
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+#comment-area {
+  margin-left: 3%;
+}
+
+#date-picker-input .mat-form-field-infix {
+  width: 100px !important;
+}
+
+#date-picker-input {
+  float: left;
+  margin-left: 20%;
+}
+
+#hours-input {
+  float: left;
+  margin-left: 9%;
+  margin-right: 3%;
+}
+
+#minutes-input {
+  float: left;
+  margin-left: 3%;
+}
+
+
+#order-button {
+  margin-top: 36px;
+  background-color: #008000e0;
+  color: #fff;
+  font-size: 14px;
+}
+
+#order-button-container {
+  width: 100%;
+}
+
+#name-input, #number-input, #comment-area, #date-picker-input, #hours-input, #minutes-input {
+  display: block;
+  width: 35%;
+  margin: 0 auto;
+  float: none;
 }
 
 
@@ -129,6 +179,14 @@
  .meals-in-cart-container {
    width: 50%;
  }
+
+ #name-input, #number-input, #comment-area, #date-picker-input, #hours-input, #minutes-input {
+   display: block;
+   width: 40%;
+   margin: 0 auto;
+   float: none;
+ }
+
 }
 
 @media only screen and (max-width: 700px) {
@@ -136,11 +194,19 @@
   .meals-in-cart-container {
     width: 50%;
   }
+
+  #name-input, #number-input, #comment-area, #date-picker-input, #hours-input, #minutes-input {
+    width: 60%;
+  }
 }
 
 @media only screen and (max-width: 600px) {
 
   .meals-in-cart-container {
     width: 85%;
+  }
+
+  #name-input, #number-input, #comment-area, #date-picker-input, #hours-input, #minutes-input {
+    width: 75%;
   }
 }

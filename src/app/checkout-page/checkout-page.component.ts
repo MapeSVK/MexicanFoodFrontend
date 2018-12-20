@@ -173,6 +173,8 @@ export class CheckoutPageComponent implements OnInit {
 
       console.log(newOrder);
       this.orderService.createOrder(newOrder);
-      // this.removeEverythingFromCart();
+      window.alert("Thank you for your order!");
+      this.removeEverythingFromCart();
+      this.router.navigate(['/meals']);
   }
 }

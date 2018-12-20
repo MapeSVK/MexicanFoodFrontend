@@ -40,3 +40,30 @@ body {
 .mat-expansion-panel {
   color: #fff;
 }
+
+.mat-form-field-underline {
+  background-color: #860f0f !important;
+  color: #860f0f;
+}
+
+.mat-form-field-underline.mat-disabled {
+  background-color: #860f0f !important;
+  color: #860f0f;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: #860f0f;
+}
+
+.mat-input-wrapper {
+  background: #860f0f;
+}
+
+.mat-form-field-ripple {
+  background-color: #860f0f !important;
+}
+
+#date-picker-input .mat-form-field-infix {
+  width: 100px !important;
+}
+
