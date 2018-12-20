@@ -9,21 +9,21 @@
       <!-- The following menu items will be hidden on small size screens -->
       <a routerLink="/checkout" class="screen-navigation-controls"><i class="fas fa-shopping-cart"></i>{{itemsInCart}}</a>
 
-      <a routerLink="/meals" mat-button class="screen-navigation-controls">MEALS</a>
+      <a routerLink="/meals" class="screen-navigation-controls">MEALS</a>
 
-      <a *ngIf="loggedIn" routerLink="/orders" mat-button class="screen-navigation-controls">ORDERS</a>
+      <a *ngIf="loggedIn" routerLink="/orders" class="screen-navigation-controls">ORDERS</a>
 
-      <a routerLink="/about-us" mat-button class="screen-navigation-controls">ABOUT US</a>
+      <a routerLink="/about-us" class="screen-navigation-controls">ABOUT US</a>
 
-      <a (click)="scrollToFooter()" mat-button class="screen-navigation-controls">CONTACT</a>
+      <a (click)="scrollToFooter()" class="screen-navigation-controls">CONTACT</a>
 
-      <a *ngIf="loggedIn" (click)="logOut()" mat-button class="screen-navigation-controls">LOGOUT</a>
+      <a *ngIf="loggedIn" (click)="logOut()" class="screen-navigation-controls">LOGOUT</a>
 
     </div>
 
     <div fxShow="true" fxHide.gt-xs="true" class="big-navigation-container">
 
-      <a routerLink="/checkout" class="screen-navigation-controls"><i class="fas fa-shopping-cart"></i></a>
+      <a routerLink="/checkout" class="screen-navigation-controls"><i class="fas fa-shopping-cart"></i>{{itemsInCart}}</a>
       <button (click)="sidenav.toggle()"><i class="fas fa-bars" id="small-navigation-icon"></i></button>
 
     </div>
@@ -51,7 +51,7 @@
     </mat-sidenav>
 
     <!-- CONTENT FROM ROOTS (MEALS,...) -->
-    <mat-sidenav-content fxFlexFill>
+    <mat-sidenav-content fxFlexFill style="background-color: #ffffff !important;">
       <router-outlet></router-outlet>
 
     </mat-sidenav-content>

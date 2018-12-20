@@ -146,9 +146,9 @@
 
 @media only screen and (min-width: 960px) {
   #card-container {
-    max-width: 46%;
-    min-width: 46%;
-    margin: 13px 2%;
+    max-width: 40%;
+    min-width: 40%;
+    margin: 13px 5%;
   }
 }
 

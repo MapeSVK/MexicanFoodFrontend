@@ -1,48 +1,82 @@
+
 .footer-info {
   background: #e8e8e8;
-  grid-row: 4 / 4;
-  grid-column: span 10;
-  font-size: 15px;
-  grid-template-rows: 100px 80px 50px;
-  grid-template-columns: repeat(10, 1fr);
-  display: grid;
   color: #860f0f;
-}
-.mail {
+  padding: 20px 0;
+  min-width: 100%;
+  min-height: 100%;
   text-align: center;
-  grid-column: 2 / 4;
+  overflow: auto;
+  padding-bottom: 45px;
 }
 
-.mail a {
+.first-part-number>a, .first-part-mail>a {
   text-decoration: none;
   color: #860f0f;
 }
 
-.mail a:hover {
-  color: #666666;
+.second-part-address>p, .second-part-opening-hours>p {
+  line-height: 12px;
+  margin: 0;
 }
 
-.address {
-  grid-column: 5 / 7;
-  text-align: center;
+.second-part p {
+  margin-top: 10px;
 }
 
-.opening-hours {
-  text-align: center;
-  grid-column: 8 / 10;
+.first-part {
+  width: 33%;
+  margin-left: 0.5%;
+  float: left;
+  margin-top: 27px;
+}
+
+.second-part-address {
+  width: 33%;
+  float: left;
+}
+
+.second-part-opening-hours {
+  width: 33%;
+  margin-right: 0.5%;
+  float: left;
 }
 
 @media only screen and (max-width: 600px) {
-  #logo {
-    width: 86%;
-    margin-top: 10px;
+  .footer-info {
+    font-size: 17px;
   }
+
+  .first-part {
+    width: 80%;
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 30px;
+  }
+
+  .second-part-address {
+    width: 80%;
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 35px;
+  }
+
+  .second-part-opening-hours {
+    width: 80%;
+    margin: 0 auto;
+    float: none;
+  }
+
 }
 
 @media only screen and (min-width: 600px) {
-
+  .footer-info {
+    font-size: 13px;
+  }
 }
 
-@media only screen and (min-width: 960px) {
-
+@media only screen and (min-width: 670px) {
+  .footer-info {
+    font-size: 15px;
+  }
 }

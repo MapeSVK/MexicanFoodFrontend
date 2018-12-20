@@ -53,10 +53,21 @@ export class CheckoutPageComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.redirectBackIfNoItemsInCart();
+
     this.maxDate = new Date(this.todayDate.getFullYear(), this.todayDate.getMonth()); //init but the day is specified bellow
     this.maxDate.setDate(this.todayDate.getDate() + 14); // max 2 weeks from now
 
     this.minDate = new Date(this.todayDate.getFullYear(), this.todayDate.getMonth(),this.todayDate.getDate());
+  }
+
+  redirectBackIfNoItemsInCart() {
+    if (this.orderLineMealsInCart.length === 0) {
+      window.alert("You don't have anything in your cart. Let's add some delicious meal!")
+      this.router.navigate(['/meals']);
+    }
+
+
   }
 
   // getting all the meals just to get their pictures
@@ -76,6 +87,9 @@ export class CheckoutPageComponent implements OnInit {
     const index = this.orderLineMealsInCart.indexOf(orderLineMeal);
     this.orderLineMealsInCart.splice(index,1);
     (<any>this.orderLineMealsInCart).save();
+
+    //if the user deletes item and there is no more meals left then redirect him
+    this.redirectBackIfNoItemsInCart();
   }
 
   removeEverythingFromCart() {
@@ -94,19 +108,30 @@ export class CheckoutPageComponent implements OnInit {
   // used when customer decides to change quantity.
   // meal with old value of quantity will be changed for "new" meal with the new value of quantity
   decreaseQuantity(orderLineMeal: OrderLine) {
-    orderLineMeal.quantity--;
-    const index = this.orderLineMealsInCart.indexOf(orderLineMeal);
-    this.orderLineMealsInCart[index] = orderLineMeal;
-    (<any>this.orderLineMealsInCart).save();
+    if (orderLineMeal.quantity > 1) {
+      orderLineMeal.quantity--;
+      const index = this.orderLineMealsInCart.indexOf(orderLineMeal);
+      this.orderLineMealsInCart[index] = orderLineMeal;
+      (<any>this.orderLineMealsInCart).save();
+    }
+    else {
+      window.alert("Amount of meals cannot be lower than 1.");
+    }
   }
 
   // used when customer decides to change quantity.
   // meal with old value of quantity will be changed for "new" meal with the new value of quantity
   increaseQuantity(orderLineMeal: OrderLine) {
-    orderLineMeal.quantity++;
-    const index = this.orderLineMealsInCart.indexOf(orderLineMeal);
-    this.orderLineMealsInCart[index] = orderLineMeal;
-    (<any>this.orderLineMealsInCart).save();
+    if (orderLineMeal.quantity < 30) {
+      orderLineMeal.quantity++;
+      const index = this.orderLineMealsInCart.indexOf(orderLineMeal);
+      this.orderLineMealsInCart[index] = orderLineMeal;
+      (<any>this.orderLineMealsInCart).save();
+    }
+    else {
+      window.alert("Please contact us via phone or email to arrange order with more than 30 meals.");
+    }
+
   }
 
   getMealPicture(orderLineMeal: OrderLine): string {
@@ -148,5 +173,6 @@ export class CheckoutPageComponent implements OnInit {
 
       console.log(newOrder);
       this.orderService.createOrder(newOrder);
+      // this.removeEverythingFromCart();
   }
 }
