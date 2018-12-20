@@ -13,6 +13,7 @@ import {NoAccessPageComponent} from './shared/no-access-page/no-access-page.comp
 
 const routes: Routes = [
   {path: 'meals', component: MealsListComponent, canActivate: [AuthGuard]},
+  {path: '', component: MealsListComponent, canActivate: [AuthGuard]},
   {path: 'meals-add', component: MealsAddComponent, canActivate: [AdminGuard]},
   {path: 'meals-update/:id', component: MealsUpdateComponent, canActivate: [AdminGuard]},
   {path: 'login', component: LoginComponent},

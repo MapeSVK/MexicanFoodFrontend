@@ -2,7 +2,7 @@ import {OrderLine} from './orderLine';
 
 export class Order {
   id?: number;
-  mobilenumber: string;
+  mobileNumber: string;
   customerName: string;
   pickUpDateAndTime?: Date;
   orderedDateAndTime?: Date;
