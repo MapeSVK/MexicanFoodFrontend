@@ -154,7 +154,7 @@ export class CheckoutPageComponent implements OnInit {
     var newOrder = new Order();
 
       // mobile no., cust. name, comment taken from the form inputs
-      newOrder.mobilenumber = this.customerDetailsForm.get('telephoneNumber').value;
+      newOrder.mobileNumber = this.customerDetailsForm.get('telephoneNumber').value;
       newOrder.customerName = this.customerDetailsForm.get('name').value;
       newOrder.comment = this.customerDetailsForm.get('comment').value;
 
