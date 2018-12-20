@@ -35,7 +35,6 @@ import { OrderListComponent } from './orders/order-list/order-list.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { WebStorageModule } from 'ngx-store';
 import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
-import { MakePaymentComponent } from './make-payment/make-payment.component';
 import { FormsModule } from '@angular/forms';
 import { NoAccessPageComponent } from './shared/no-access-page/no-access-page.component';
 import { NgIdleKeepaliveModule } from '@ng-idle/keepalive';
@@ -55,7 +54,6 @@ import { DialogWindowComponent } from './shared/dialog-window/dialog-window.comp
     OrderListComponent,
     AboutUsComponent,
     CheckoutPageComponent,
-    MakePaymentComponent,
     NoAccessPageComponent,
     DialogWindowComponent
   ],

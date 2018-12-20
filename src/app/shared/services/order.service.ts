@@ -16,7 +16,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class OrderService {
-  apiUrl = 'https://mexicanfooddeveloper.azurewebsites.net/api/orders';
+  apiUrl = 'https://mexicanfoodmaster.azurewebsites.net/api/orders';
 
   constructor(private http: HttpClient, private authenticationService: AuthenticationService) {
   }
@@ -44,7 +44,7 @@ export class OrderService {
   createOrder(newOrder: Order): Subscription {
     return this.http.post<Order>(this.apiUrl, newOrder, {observe: 'response'}).subscribe(response => {
 
-      // You can access status:
+      // You can observe status:
       console.log(response.status);
 
     });

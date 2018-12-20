@@ -11,7 +11,7 @@ import * as jwt_decode from 'jwt-decode';
 export class AuthenticationService {
 
   constructor(private http: HttpClient) { }
-  apiUrl = 'https://mexicanfooddeveloper.azurewebsites.net/api/tokens';
+  apiUrl = 'https://mexicanfoodmaster.azurewebsites.net/api/tokens';
   public isLoggedIn = new BehaviorSubject<boolean>(!!this.getToken());
 
   public login(username: string, password: string): Observable<string> {
