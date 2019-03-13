@@ -30,7 +30,8 @@ export class MealService {
   }
   updateMeal(id: number, meal: Meal): Observable<any> {
     httpOptions.headers =
-      httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
+      httpOptions.headers.set('Authorization', 'Bearer ' +
+        this.authenticationService.getToken());
     return this.http.put(this.apiUrl + '/' + id, meal, httpOptions);
   }
   deleteMeal(id: number): Observable<any> {
